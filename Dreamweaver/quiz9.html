@@ -1,0 +1,266 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<head><title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=10;
+ans[1]='c';
+ans[2]='c';
+ans[3]='a';
+ans[4]='a';
+ans[5]='b';
+ans[6]='b';
+ans[7]='c';
+ans[8]='c';
+ans[9]='a';
+ans[10]='c';
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                       done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+
+			
+				
+
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+			<li><a href="../Dreamweaver/index.html">Home</a></li>
+			<li><a href="../Dreamweaver/list.html">Experiments</a></li>
+			<li><a href="../Dreamweaver/equip.html">Basic Equipments</a></li>
+			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
+			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
+			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
+                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
+						
+
+		</ul>
+</div>	
+<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	        <h2 class="title">QUIZ - 9</h2>
+			<BR>
+  <BR>         
+<P>
+<div class="nob">
+<form>
+<ol class="boldlist"><li>A  transmission line of length more than 160 Km and line voltage higher 100 kV then it is called: </li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>
+  Short Transmission line
+<br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>
+Medium Transmission line
+<br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>
+Long Transmission line
+<br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>
+None of these<br>
+<br>
+</ul>
+
+
+<li>If  the overhead transmission line is loaded with the loading equal to the surge impedance, then the voltage  at receiving end is: </li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>
+  Greater than the sending end
+<br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>
+Less  than the sending end<br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>
+Equals  to the sending end<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>
+None of these<br><br></ul>
+
+
+<li>The paramters of a transmission line for exact solution are:</li>
+<p>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>
+  Distributed  parameters<br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>
+Lumped parameters<br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>
+mixed parameters
+<br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>
+None  of these<br>
+<br></ul>
+
+
+<li>The  value of charging current at the receiving end of the transmission line is:</li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>
+  Zero<br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>
+Modarate
+<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>
+Equal to load current
+<br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>
+None of these<br><br></ul>
+
+
+<li>The  square root of the ratio of line impedance to its shunt admittance is called:</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>
+  Regulation of the transmission line
+<br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>
+Surge  impedance of the transmission line<br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>
+Conductance  of the transmission line<br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>
+Surge  admittance of the transmission line<br><br></ul>
+
+
+<li> If  the receiving end voltage is greater than the sending end voltage, regulation of transmission line  is:</li>
+<ul>
+  <p>
+    <input type=radio value='a' onClick='Engine(6, this.value)'>
+    Positive<br>
+  <input type=radio value='b' onClick='Engine(6, this.value)'>
+  Negative<br>
+  <input type=radio value='c' onClick='Engine(6, this.value)'>
+  Zero<br>
+  <input type=radio value='d' onClick='Engine(6, this.value)'>
+  None of these<br>
+  <br>
+   </p>
+</ul>
+
+
+<li> The  charging current in the transmission line:  </li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>
+  lags the voltage by 90&#730;<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>
+leads the voltage by 45&#730;<br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>
+leads the voltage by 90&#730;<br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>
+leads the voltage by 180&#730;<br>
+<br>
+</ul>
+
+
+<li> The reflection coefficient of an open-ended transmission line is:</li>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>
+  1.0<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>
+0.5<br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>
+-1.0<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>
+2.0<br>
+<br>
+</ul>
+
+
+<li>Ferranti  effect is experienced on a long overhead transmission lines  when it is:</li>
+<ul>
+  <p>
+    <input type=radio value='a' onClick='Engine(9, this.value)'>
+    Lightly loaded<br>
+  <input type=radio value='b' onClick='Engine(9, this.value)'>
+  fully load at unity pf<br>
+  <input type=radio value='c' onClick='Engine(9, this.value)'>
+  fully load at 0.8 p.f. lag<br>
+  <input type=radio value='d' onClick='Engine(9, this.value)'>
+  none of the above</p>
+<br>
+</ul>
+
+
+<li> The  power loss in a transmission line due to charging current is:</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>
+  Ic<sup>2</sup>R
+<br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>
+Ic<sup>2</sup>R/4
+<br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>
+Ic<sup>2</sup>R/2
+<br>
+<input type=radio value='d' onClick='Engine(10, this.value)'>
+Ic<sup>2</sup>R/8
+<br><br></ul>
+</ol>
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+    
+
+            </P></div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+    
+<div id="sidebar">
+          
+		<ul class="extra-list">
+			<li><a href="../Dreamweaver/objective9.html">Objective</a></li>
+			<li><a href="../Dreamweaver/equip9.html">Equipments</a></li>
+			<li><a href="../Dreamweaver/connection9.html">Connection Diagram</a></li>
+			<li><a href="../Dreamweaver/proce9.html">Theory And Procedure</a></li>
+			<li><a href="../Dreamweaver/observ9.html"> Observation</a></li>
+			<li><a href="../Dreamweaver/sim9.html">Simualtion</a></li>
+			<li><a href="../Dreamweaver/video9.html">Videos of Exp.9</a></li>
+            <li><a href="../Dreamweaver/quiz9.html">Quiz</a></li>
+			<li><a href="../Dreamweaver/feedback9.html">Feedback</a></li>
+	
+
+</ul></div>
+		<!-- end #sidebar -->
+              
+           </div>
+           </div>
+           </div>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+			<!-- start -->
+
+<div id="output">
+						<center><img src="images/category7/036.jpg" alt="" /></center>
+</div>
+					
+					<div id="captions">
+					
+						<div id="nav">
+						  <ul>
+							  <li><a href="#" class="navPrevious">[ &lt; ]</a></li>
+							  <li><a href="#" class="navNext">[ &gt; ]</a></li>
+							  <li><a href="#" class="navStopAdvance">[ Stop ]</a></li>
+							  <li><a href="#" class="navPlayAdvance active">[ Play ]</a></li>
+							</ul>
+			      </div>	
+						
+						<span class="line"></span>
+						
+						<br class="clear" />
+						
+						<span class="line2"></span>
+						
+						
+					</div>			
+
+					<ul class="thumbnails category1">
+						<li class="first"><img src="images/category7/036.jpg" title="" alt="" width="2048" height="1536" /></li>
+						<li><img src="images/category7/dec11 019.jpg" title="" alt="" width="1692" height="1696" /></li>
+						<li><img src="images/category7/Fig. 2.JPG" title="" alt="" width="4000" height="3000" /></li>
+						<li><img src="images/category7/Fig. 4.JPG" title="" alt="" width="640" height="480" /></li>
+						<li><img src="images/category7/Fig. 6.JPG" title="" alt="" width="2048" height="1536" /></li>
+						<li><img src="images/category7/Fig. 7.JPG" title="" alt="" width="3264" height="2448" /></li>
+						<li><img src="images/category7/Fig. 10.JPG" title="" alt="" width="742" height="480" /></li>
+                        <li><img src="images/category7/Fig. 17.jpg" title="" alt="" width="4000" height="3000" /></li>
+						<li class="thspe"><img src="images/category7/MS course05.jpg" title="" alt="" width="898" height="607" /></li>
+						<li class="thspe"><img src="images/category7/photo004.jpg" title="" alt="" width="760" height="480" /></li>
+						<li class="thspe"><img src="images/category7/Richard Ernest.JPG" title="" alt="" width="742" height="480" /></li>
+						<li class="thspe"><img src="images/category7/aerostat.jpg" title="" alt="" width="296" height="170" /></li>
+						<li class="thspe"><img src="images/category7/untitled.JPG" title="" alt="" width="2048" height="1536" /></li>
+                      <li class="last"><img class="thspe" src="images/category7/vlcsnap-2010-11-27-05h21m25s139.png" title="" alt="" width="853" height="480" /></li>
+						</ul>
+
+					<br class="clear" />
+					
+					<script type="text/javascript">
+
+						$.gallerax({
+							outputSelector: 		'#output img',				// Output selector
+							thumbnailsSelector:		'.thumbnails li img',		// Thumbnails selector
+							captionSelector:		'#captions .line',			// Caption selector
+							captionLines:			2,							// Caption lines (3 lines)
+							fade: 					'fast',						// Transition speed (fast)
+							navNextSelector:		'#nav a.navNext',			// 'Next' selector
+							navPreviousSelector:	'#nav a.navPrevious',		// 'Previous' selector
+							navFirstSelector:		'#nav a.navFirst',			// 'First' selector
+							navLastSelector:		'#nav a.navLast',			// 'Last' selector
+							navStopAdvanceSelector:	'#nav a.navStopAdvance',	// 'Stop Advance' selector
+							navPlayAdvanceSelector:	'#nav a.navPlayAdvance',	// 'Play Advance' selector
+							advanceFade:			'slow',						// Advance transition speed (slow)
+							advanceDelay:			4000,						// Advance delay (4 seconds)
+							advanceResume:			12000,						// Advance resume (12 seconds)
+							thumbnailsFunction: 	function(s) {				// Thumbnails function
+							
+								return s.replace(/_thumb\.jpg$/, '.jpg');
+								
+							}
+						});
+
+					</script>
+
+			<!-- end -->

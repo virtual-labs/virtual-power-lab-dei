@@ -1,0 +1,417 @@
+/*
+Design by the Dayal Bagh Educational Institute
+http://www.220.227.100.62/Dreamweaver/
+Released for mhrd project
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFF9FF;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+}
+.title
+{
+	text-align:center;
+	text-decoration: underline;
+	font: lighter 3.2em Georgia, "Times New Roman", Times, serif;
+	color: #000;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	color: #000000;
+}
+
+h1 {
+	font-size: 16pt;
+	color: #000;
+}
+
+h2 {
+	font-size: 2.2em;
+	color: #000;
+}
+
+h3 {
+	font-size: 1.2em;
+	font-weight: normal;
+	color: #000;
+}
+h4 {
+	font-size:16px;
+	font-weight:bold;
+	color:#000000;
+}
+
+.pad
+{
+	padding-left:180px;
+}
+p, ol {
+	margin-top: 0;
+	line-height: 180%;
+	text-align:justify;
+	color: #000;
+}
+ ul {
+    margin-top: 0;
+	line-height: 180%;
+	text-align:justify;
+	font-weight:normal;
+ }
+ul,ol{
+}
+.boldlist
+{
+	font-weight:bold;
+}
+  .ol{
+	font-size: 14pt;
+}
+.box1 {
+	background:#e5e5e5;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	behavior:url(js/PIE.htc);
+	position:relative;
+	padding:24px 24px 45px 24px;
+}
+	.box1 h2 {
+		padding-top:0;
+	}
+
+
+.grid_11{
+	display:inline;
+	float: left;
+	position: relative;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.extra-list {
+		padding-bottom:18px;
+	}
+	.extra-list li {
+		padding-bottom:6px;
+		width:100%;
+		
+	}
+		.extra-list li a {
+			position:relative;
+			display: block;
+			border:1px solid #fff;
+			padding:17px 0 17px 60px;
+			font-size:16px;
+			background:url(../images/list-tail.gif) 0 0 repeat-x #F7BE81;
+			height:1.5%;
+			border-radius:10px;
+			-moz-border-radius:10px;
+			-webkit-border-radius:190px;
+			behavior:url(js/PIE.htc);
+		}
+		.extra-list li a:hover {background:#7EAD01;}
+			.extra-list li a img {
+				display:block;
+				position:absolute;
+				left:24px;
+				top:14px;
+			}
+a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #00D;
+}
+
+#wrapper {
+	width: 980px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+/* Header */
+
+#header {
+	clear: both;
+	width: 1110px;
+	height: 181px;
+	margin: 0 auto;
+	padding: 0px;
+	background: url(../New Cv/bgnew.png) no-repeat left top;
+	font-weight: normal;
+	
+	
+}
+
+/* Logo */
+
+#logo {
+	position:absolute;
+	overflow:fix;
+	margin: 0;
+	
+}
+
+#logo h1, #logo p {
+	margin: 0;
+	
+}
+
+#logo h1 {
+	padding-top: 105px;
+	padding-left:300px;
+	color: #000;
+	position:absolute;
+	font: bold normal 21pt "Arial Black", Gadget, sans-serif;
+	width: 715px;
+
+}
+
+#logo p {
+	margin: 0;
+	padding: 0px 0 0 0px;
+	font: normal 14px Georgia, "Times New Roman", Times, serif;
+	font-style: italic;
+	color: #900;
+} 
+
+#logo a {
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #000;
+}
+
+/* Menu */
+
+#menu {
+	width: 1130px;
+	height: 78px;
+	margin: 0 auto;
+	padding: 0;
+	color: #000;
+}
+
+#menu ul {
+	margin: 0;
+	padding: 0px;
+	list-style: none;
+	line-height: normal;
+	}
+
+#menu li {
+	float: left;
+	background: #FFFFFF url(images/img03.gif) repeat-x left top;
+}
+
+#menu a {
+	display: block;
+	height: 38px;
+	margin-right: 1px;
+	padding: 15px 15px 0px 15px;
+	background: url(images/img04.gif) no-repeat right top;
+	text-align: center;
+	text-transform: uppercase;
+	color: #000;
+	border: none;
+	font: bold 11.5px "Arial Black" ;
+}
+
+#menu a:hover, #menu .current_page_item a {
+	background: url(images/img05.gif) repeat-x left top;
+	text-decoration: none;
+	color: #00D;
+}
+
+#menu .current_page_item a {
+
+}
+
+/* Page */
+
+#page {
+	width: 940px;
+	margin: 0 auto;
+	padding: 0px 0px 0px 0px;
+}
+
+#page-bgtop {
+	padding: 20px 0px;
+}
+
+#page-bgbtm {
+	cursor: auto;
+}
+
+/* Content */
+
+#content {
+	float: right;
+	width: 580px;
+	padding: 20px 60px 0px 0px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	font-weight: normal;
+}
+
+
+.links {
+	padding-top: 20px;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/* Sidebar */
+
+#sidebar {
+	float: left;
+	width: 250px;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	color: #000;
+}
+
+
+#sidebar ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font-size: 14px;
+}
+
+#sidebar li {
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar li ul {
+	margin: 0px 0px;
+	padding-bottom: 30px;
+}
+
+#sidebar li li {
+	line-height: 35px;
+	background: url(images/img02.gif) repeat-x left bottom;
+	margin: 0px 30px;
+	border-left: none;
+}
+
+#sidebar li li a {
+	padding-left: 10px;
+	background: url(images/img01.gif) no-repeat left 6px;
+}
+
+#sidebar li li span {
+	display: block;
+	margin-top: -20px;
+	padding: 0;
+	font-size: 11px;
+	font-style: italic;
+}
+
+#sidebar h2 {
+	height: 38px;
+	padding-left: 30px;
+	background: url(images/img11.PNG) no-repeat left top;
+	letter-spacing: -.5px;
+	font-size: 1.6em;
+}
+
+#sidebar p {
+	margin: 0 0px;
+	padding: 0px 30px 20px 30px;
+	text-align: justify;
+	color: #000;
+	font-size: 16px;
+}
+
+#sidebar a {
+	border: none;
+}
+
+#sidebar a:hover {
+	text-decoration: underline;
+	color: #00D;
+}
+
+/* Footer */
+
+#footer {
+	height: 50px;
+	margin: 0 auto;
+	padding: 0px 0 15px 0;
+	background: #ECECEC;
+	border-top: 1px solid #DEDEDE;
+	font-family: Arial, Helvetica, sans-serif;
+	color: #00D;
+}
+
+#footer p {
+	margin: 0;
+	padding-top: 20px;
+	text-transform: uppercase;
+	text-align: center;
+	color: #000;
+	font: 10px/normal "Times New Roman", Times, serif;
+}
+
+#footer a {
+	color: #00D;
+}
+#header #logo center font {
+	color: #000;
+	position:absolute;
+}
+#wrapper #page #page-bgtop #page-bgbtm #content .post .entry div div div div p {
+	color: #000;
+}
+.color {
+	background: #A7FC00;
+	color: #A7FC00;
+}
+.thimage {
+	padding: 0px;
+	padding-left:0px;
+	padding-top:0px;
+	top: 2px;
+	position: absolute;
+	page-break-before: always;
+	left: 262px;
+	width: 550px;
+	height: 90px;
+
+}
+
+.object {
+	font: normal 14pt "Times New Roman", Times, serif;
+	color: #000;
+}
+.nob {
+	font: 14pt "Times New Roman", Times, serif;
+	color: #000;
+}
+.shead {
+	color: #00D;
+	text-decoration: underline;
+	font: oblique bold normal 14pt "Times New Roman", Times, serif;
+}
+.sshead {
+	font: oblique bold 14pt "Times New Roman", Times, serif;
+	color: #00D;
+}
+.post {
+	font: 12px Georgia, "Times New Roman", Times, serif;	
+}
+.st {
+	font: 16px Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+}

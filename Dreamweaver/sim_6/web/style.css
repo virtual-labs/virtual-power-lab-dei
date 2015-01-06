@@ -1,0 +1,92 @@
+/* 
+    Document   : style
+    Created on : 2 Mar, 2011, 12:36:39 PM
+    Author     : Satyam Sharan <satyam.sharan@hotmail.com>
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.Interface{
+    width: 700px;
+    height: 550px;
+    background: url("images/back.png") transparent no-repeat left top;
+}
+
+.Interface-inMainPanel{
+    width: 100%;
+}
+
+.Interface-hp1{
+    margin-left: 173px;
+    margin-top: 80px;
+}
+.Interface-hp2{
+    margin-left: 340px;
+}
+.Interface-hp3{
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 420px;
+}
+
+.Interface-hp4{
+    margin-top: 22px;
+    margin-left: 480px;
+}
+
+.Interface-hp5{
+    margin-top: 90px;
+    margin-left: 270px;
+}
+.Interface-hp6{
+    width: 40px;
+    height: 40px;
+}
+.Interface-hp7{
+    margin-top: 25px;
+    margin-left: 322px;
+}
+.Interface-b-open{
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url("images/valveOpen.png") transparent no-repeat center;
+}
+
+.Interface-b-close{
+    border: solid 2px;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    background: url("images/valveClose.png") transparent no-repeat center;
+}
+.Interface-b6{
+  
+    background: transparent url("images/pump.png");
+    cursor: pointer;
+    width: 100px;
+    height: 60px;
+}
+.Interface-canvas{
+}
+.Interface-errorLabel{
+    font: bold small sans-serif;
+    color: red;
+}
+
+.Scale{
+    background: url("images/scale.png") transparent center center no-repeat;
+}
+
+
+.Scale-canvas{
+}
