@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<head><title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=10;
+ans[1]='a';
+ans[2]='a';
+ans[3]='b';
+ans[4]='c';
+ans[5]='b';
+ans[6]='c';
+ans[7]='c';
+ans[8]='d';
+ans[9]='a';
+ans[10]='d';
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                       done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+
+			
+				
+
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+	<li><a href="../Dreamweaver/index.html">Home</a></li>
+			<li><a href="../Dreamweaver/list.html">Experiments</a></li>
+			<li><a href="../Dreamweaver/equip.html">Basic Equipments</a></li>
+			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
+			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
+			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
+                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
+						 
+		</ul>
+</div>	
+<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	        <h2 class="title">QUIZ - 8</h2>
+			<BR>
+  <BR>         
+<P>
+<div class="nob">
+<form>
+<ol class="boldlist">
+<li>The value of X<sub>d</sub>” for 2 pole Turbo alternator  in the range of: </li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>0.07 to 0.12<br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>0.1 to 0.5 <br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>1 to 5 <br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>0.7 to 1.8<br><br><br></ul>
+
+<li>The value of X<sub>d</sub>” for water wheel alternators in the range of:</li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>0.1 to 0.35<br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>1 to 3.5<br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>0.07 to 0.12<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>0.7 to 1.2<br><br><br></ul>
+
+
+<li>Which statement is correct just after fault:</li>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>X<sub>d</sub>”= X<sub>d</sub>’= X<sub>d</sub><br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>X<sub>d</sub>” < X<sub>d</sub>’< X<sub>d</sub><br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>X<sub>d</sub>” >X<sub>d</sub>’ >X<sub>d</sub><br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>None of these<br><br><br></ul>
+
+
+<li>The reactances of a synchronous machine depend upon:</li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>Applied Voltage <br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>Leakage flux<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>Degree of saturation of magnetic core<br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>Power factor of supply current<br><br><br></ul>
+
+
+<li>Line to line fault in a transmission line is a:</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>Symmetrical fault<br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>Unsymmetrical fault<br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>Somewhat symmetrical<br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>Somewhat unsymmetrical<br><br><br></ul>
+
+
+<li>Selection of circuit breaker depends upon:</li>
+<ul><input type=radio value='a' onClick='Engine(6, this.value)'>Current under normal operating condition<br>
+<input type=radio value='b' onClick='Engine(6, this.value)'>(Current under normal condition) + (maximum current which flows momentarily) <br>
+<input type=radio value='c' onClick='Engine(6, this.value)'>(Current under normal condition) + (maximum current which flows momentarily) +(interrupting current at given kV)<br>
+<input type=radio value='d' onClick='Engine(6, this.value)'>None<br><br><br></ul>
+
+
+<li>The short circuit current has:  </li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>Symmetrical component of current only<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>D.C. off-set current only <br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>Both 1 and  2<br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>None of the above<br><br><br></ul>
+
+
+<li>If &theta; &asymp; 90° and  	&alpha;= 0, then maximum momentary current (i<sub>mm</sub>) will be:</li>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>Half the maximum of symmetrical short circuit current<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>Equal to the maximum of symmetrical short circuit current<br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>Four times to the maximum of symmetrical short circuit current<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>Twice the maximum of symmetrical short circuit current<br><br><br></ul>
+
+
+<li>The value of symmetrical short circuit current:</li>
+<ul><input type=radio value='a' onClick='Engine(9, this.value)'>&radic;2V/|Z|<br>
+<input type=radio value='b' onClick='Engine(9, this.value)'>1/2(&radic;2V/|Z|)<br>
+<input type=radio value='c' onClick='Engine(9, this.value)'>1/4(&radic;2V/|Z|)<br>
+<input type=radio value='d' onClick='Engine(9, this.value)'>(1/&radic;2)*(&radic;2V/|Z|)<br><br></ul>
+
+
+<li>The effective value of transient reactance when there is no damping current:</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>X<sub>d</sub>’ = X<sub>L</sub> + X<sub>a</sub><br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>X<sub>d</sub>’ = X<sub>L</sub> + X<sub>f</sub><br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>X<sub>d</sub>’ = X<sub>L</sub><br>
+<input type=radio value='d' onClick='Engine(10, this.value)'>X<sub>d</sub>’ = X<sub>L</sub> + (X<sub>a</sub> || X<sub>f</sub>)<br><br><br></ul>
+</ol>
+
+
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+    
+
+            </P></div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+    
+<div id="sidebar">
+          
+		<ul class="extra-list">
+			<li><a href="../Dreamweaver/objective8.html">Objective</a>
+		  </li>
+			<li><a href="../Dreamweaver/equip8.html">Equipments</a>
+		    </li>
+			<li><a href="../Dreamweaver/connection8.html">Connection Diagram</a></li>
+			<li><a href="../Dreamweaver/proce8.html">Theory And Procedure</a></li>
+			<li><a href="../Dreamweaver/observ8.html"> Observation </a></li>
+			<li><a href="../Dreamweaver/sim8.html">Simualtion</a></li>
+			<li><a href="../Dreamweaver/video 8.html">Videos of Exp.8</a></li>
+            <li><a href="../Dreamweaver/quiz8.html">Quiz</a></li>
+			<li><a href="../Dreamweaver/feedback8.html">Feedback</a></li>
+</ul></div>
+		<!-- end #sidebar -->
+              
+           </div>
+           </div>
+           </div>
+
+</body>
+</html>

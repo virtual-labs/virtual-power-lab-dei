@@ -1,0 +1,201 @@
+
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html >
+<title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=10;
+ans[1]='d';
+ans[2]='b';
+ans[3]='c';
+ans[4]='a';
+ans[5]='a';
+ans[6]='b';
+ans[7]='a';
+ans[8]='a';
+ans[9]='d';
+ans[10]='b';
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                       done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+
+			
+				
+
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+	<li><a href="../Dreamweaver/index.html">Home</a></li>
+			<li><a href="../Dreamweaver/list.html">Experiments</a></li>
+			<li><a href="../Dreamweaver/equip.html">Basic Equipments</a></li>
+			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
+			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
+			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
+                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
+						 
+		</ul>
+	
+
+</div>		  
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	         <h2 class="title">QUIZ - 7</h2>
+<BR>
+  <BR>         
+<P>
+<div class="nob">
+<form>
+<ol class="boldlist">
+<li>The standard voltage ratings of an electromagnetic relay are- </li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>110 V, 63.5 V(L-N)<br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>220 V, 110 V <br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>230 V, 154 V <br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>400 V, 231 V<br><br><br></ul>
+
+
+<li>The main function of relay is-  </li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>Fault isolation<br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>Fault detection<br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>Fault protection<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>All of the above<br><br><br></ul>
+
+
+<li>The relay operating coil is energized by- </li>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>Steam engine<br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>Power transformer<br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>Instrument transformer<br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>None of the above<br><br><br></ul>
+
+
+<li> Which one is correct- </li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>1 VA relay is more senstive than 5 VA relay<br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>1 VA relay is Less senstive than 5 VA relay<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>1 VA relay is equally senstive  than 5 VA relay<br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>None of the above<br><br><br></ul>
+
+
+<li>An over current relay having a current setting of 125% is connected to CT of 400/5. The pick up value is-</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>6.25 A <br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>10 A <br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>12.5 A <br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>15 A<br><br><br></ul>
+
+
+<li>The pick up value of relay is 7.5 A and fault current in relay coil is 30 A. Its plug setting multiplier is-</li>
+<ul><input type=radio value='a' onClick='Engine(6, this.value)'>2 A<br>
+<input type=radio value='b' onClick='Engine(6, this.value)'>4 A <br>
+<input type=radio value='c' onClick='Engine(6, this.value)'>6 A<br>
+<input type=radio value='d' onClick='Engine(6, this.value)'>8 A<br><br><br></ul>
+
+
+<li>Induction relays are used with-  </li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>AC<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>DC <br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>Both AC and DC<br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>None of the above<br><br><br></ul>
+
+
+<li>In merz-price protection, the CT secondary of delta - star transformer is connected in- </li>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>Star- delta<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>Delta-delta<br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>Star-star<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>Delta- star<br><br><br></ul>
+
+
+<li>The number of pilot wires required for protecting 3-phaes transmission line using transley system of protection is-
+</li>
+<ul><input type=radio value='a' onClick='Engine(9, this.value)'>6<br>
+<input type=radio value='b' onClick='Engine(9, this.value)'>4<br>
+<input type=radio value='c' onClick='Engine(9, this.value)'>3<br>
+<input type=radio value='d' onClick='Engine(9, this.value)'>2<br><br></ul>
+
+
+<li> The least expensive overcurrent protection for LV system is-</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>Isolation<br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>Fuse<br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>Oil CB<br>
+<input type=radio value='d' onClick='Engine(10, this.value)'>Air CB<br><br><br></ul>
+</ol>
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+    
+
+            </P></div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+<div id="sidebar">
+          
+			<ul class="extra-list">
+			<li><a href="../Dreamweaver/objective7.html">Objective</a>
+		  </li>
+			<li><a href="../Dreamweaver/equip7.html">Equipments</a>
+		    </li>
+			<li><a href="../Dreamweaver/connection7.html">Connection Diagram</a>			</li>
+			<li><a href="../Dreamweaver/proce7.html">Theory And Procedure</a>			</li>
+			<li><a href="../Dreamweaver/observ7.html"> Observation </a>			</li>
+			<li><a href="../Dreamweaver/sim7.html">Simualtion</a>			</li>
+			<li><a href="../Dreamweaver/video7.html">Videos of Exp.7</a>        </li>
+            <li><a href="../Dreamweaver/quiz7.html">Quiz</a></li>
+			<li><a href="../Dreamweaver/feedback7.html">Feedback</a></li>
+</ul></div>
+		<!-- end #sidebar -->
+              
+           </div>
+           </div>
+           </div>
+
+</body>
+</html>
+

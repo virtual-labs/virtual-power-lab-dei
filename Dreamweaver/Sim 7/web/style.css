@@ -1,0 +1,94 @@
+/* 
+    Document   : style
+    Created on : May 15, 2011, 12:02:21 PM
+    Author     : Satyam Sharan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+.Interface{
+    width: 100%;
+    height: 100px;
+}
+.Interface-increaseButton{
+    background: url("images/upper.png");
+    width:100px;
+    height:50px;
+    cursor: pointer;
+}
+.Interface-decreaseButton{
+    background: url("images/lower.png");
+    width:100px;
+    height:50px;
+    cursor: pointer;
+}
+.Meter-canvas{
+    
+}
+.Meter-outCanvas{
+    border: solid 1px;
+}
+.Meter-incTMS{
+    width: 50px;
+    height: 25px;
+}
+.Meter-decTMS{
+    width: 50px;
+    height: 25px;
+}
+.Meter-Label{
+    font: bold small sans-serif;
+    color: blue;
+    text-decoration: underline;
+}
+.Meter-RB{
+    font: bold small sans-serif;
+}
+.Meter-outDisplay{
+    border: solid 1px;
+}
+.Meter-incCurrent{
+    font: bold small sans-serif;
+    width: 200px;
+    height: 40px;
+}
+.Meter-decCurrent{
+    font: bold small sans-serif;
+    width: 200px;
+    height: 40px;
+}
+.Display{
+    
+    width:300px;
+}
+.Display-relayCurrent{
+    background-color: #0c3010;
+    font: bold small monospace;
+    color: lawngreen;
+    height:20px;
+}
+
+.Display-relayCurrentLabel{
+    font: bold small sans-serif;
+    color: blue;
+}
+
+.Display-stopClock{
+    background-color: #0c3010;
+    font: bold small monospace;
+    color: lawngreen;
+    height:20px;
+}
+
+.Display-stopClockLabel{
+    font: bold small sans-serif;
+    color: blue;
+}

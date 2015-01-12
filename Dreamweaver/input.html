@@ -1,0 +1,82 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html>
+<head>
+<title>HTML Frames Example - Menu 1</title>
+<style type="text/css">
+body {
+	font-family:verdana,arial,sans-serif;
+	font-size:10pt;
+	margin:10px;
+	background-color:#FFF9FF;
+	}
+#sim
+{
+	font-size: 18px;
+}
+.color {
+	color: #00D;
+	font: bold 14pt "Times New Roman", Times, serif;
+}
+</style>
+<script type="text/javascript">
+
+function DCmotorModel () {
+
+Ra=1.0; Rf=150; Lf=0.01; La=0.1;c=10;
+T=0.01; B=1.5; x1=0.01;
+fc=0.01; ia=0; w=0; dt=0.0001;v=220;
+
+var v1=document.the_form.valv.value;
+var Rf1=document.the_form.varRf.value;
+var Ra1=document.the_form.varRa.value;
+
+ v = v - (- v1);
+ Rf=Rf- (-Rf1);
+ Ra=Ra- (-Ra1);	
+
+for (i=0; i<10000; i++) {
+var    dfc = ( v - (Rf * fc)) / Lf;
+var    dia = ( v - (c * fc * w) - (Ra* ia)) / La;
+var    dw= ( (c* fc * ia) - T - (B * w)) / x1;
+var    fc = fc + dt * dfc;
+var    ia = ia + dt * dia;
+var    w = w + dt * dw;
+}
+document.the_form.curria.value = (Math.round(ia*100)/100);
+document.the_form.speedw.value = (Math.round(w * 600/6.363*100)/100);
+}
+</script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+
+<ol align="justified">
+
+<form name="the_form">
+<h2 class="color" >
+INPUTS<br></h2>
+<div id="sim"> Terminal Voltage variation(V):
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="valv"></div><br><br>
+<form name="the_form">
+<div id="sim">Variation in R<sub>f</sub>(&Omega;):
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="varRf"></div><br><br>
+<form name="the_form">
+<div id="sim">Variation in R<sub>a</sub>(&Omega;):
+  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="varRa"></div>
+<h2 class="color">
+OUTPUTS<br></h2>
+<div id="sim">Speed w(rpm):  
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6" name="speedw"></div><br>
+<div id="sim">Current I<sub>a</sub>(A):  
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6" name="curria"><br></div>
+
+<a href="#" onClick ="DCmotorModel (); return false;"><br><br><font color="#0076EC"><ul><h1>
+  Calculate Motor Speed and Current</h1> </ul></a>
+</form>
+</form>
+</form>
+</ol>
+</body>
+</html>
