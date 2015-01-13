@@ -1,2 +1,0 @@
-# Module in.ac.dei.Exp6
-# RPC service class, partial path of RPC policy file

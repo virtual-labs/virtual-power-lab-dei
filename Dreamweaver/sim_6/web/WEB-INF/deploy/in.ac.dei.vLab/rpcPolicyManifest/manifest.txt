@@ -1,2 +1,0 @@
-# Module in.ac.dei.vLab
-# RPC service class, partial path of RPC policy file
