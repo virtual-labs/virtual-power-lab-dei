@@ -21,13 +21,13 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "pjn@iiit.ac.in", 
+                        "email": "", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Narayanan P J", 
+                    "institute": "Dayalbagh Educational Institute", 
+                    "name": "Dr. Sanjeev Kumar and Dr. Rahul Umrao", 
                     "organization": "", 
                     "role": "Lab Developer", 
                     "title": "", 
@@ -36,55 +36,55 @@
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "revanth.nr@research.iiit.ac.in", 
+                        "email": "", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Revanth N R", 
+                    "institute": "Dayalbagh Educational Institute", 
+                    "name": "Dr. D. K. Chaturvedi", 
+                    "organization": "DEI", 
+                    "role": "Project Incharge", 
+                    "title": "Virtual Power Lab", 
+                    "web": ""
+                }, 
+                {
+                    "contact": {
+                        "alternate_email": "ajaykant900@gmail.com", 
+                        "email": "dkc.foe@gmail.com", 
+                        "mobile_number": "9456433788", 
+                        "office_number": "5622801545"
+                    }, 
+                    "department": "Electrical Engineering", 
+                    "institute": "Dayalbagh Educational Institute", 
+                    "name": "", 
                     "organization": "", 
-                    "role": "Lab RA", 
+                    "role": "", 
                     "title": "", 
                     "web": ""
                 }, 
                 {
                     "contact": {
                         "alternate_email": "", 
-                        "email": "kaustav.kundu@students.iiit.ac.in", 
+                        "email": "", 
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
                     "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Kaustav Kundu", 
+                    "institute": "Dayalbagh Educational Institute", 
+                    "name": "", 
                     "organization": "", 
-                    "role": "Lab RA", 
-                    "title": "", 
-                    "web": ""
-                }, 
-                {
-                    "contact": {
-                        "alternate_email": "", 
-                        "email": "arun.abraham.360@gmail.com", 
-                        "mobile_number": "", 
-                        "office_number": ""
-                    }, 
-                    "department": "", 
-                    "institute": "IIIT Hyderabad", 
-                    "name": "Arun Abraham", 
-                    "organization": "", 
-                    "role": "Lab RA", 
+                    "role": "", 
                     "title": "", 
                     "web": ""
                 }
             ], 
             "discipline": [
-                "Computer Science & Engineering"
+                ""
             ], 
-            "id": "cse18", 
+            "id": "", 
             "integration_level": 5, 
-            "name": "Computer Graphics", 
+            "name": "", 
             "server-side": true, 
             "status": "Released", 
             "type": ""
