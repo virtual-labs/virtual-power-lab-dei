@@ -1,0 +1,196 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<head>
+<title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=10;
+ans[1]='b';
+ans[2]='c';
+ans[3]='a';
+ans[4]='b';
+ans[5]='b';
+ans[6]='b';
+ans[7]='b';
+ans[8]='b';
+ans[9]='d';
+ans[10]='b';
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                       done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+
+			
+				
+
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> 
+		  <div id="menu">
+		<ul>
+				<li><a href="../Dreamweaver/index.html">Home</a></li>
+			<li><a href="../Dreamweaver/list.html">Experiments</a></li>
+			<li><a href="../Dreamweaver/equip.html">Basic Equipments</a></li>
+			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
+			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
+			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
+                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
+						 
+		</ul>
+</div>	
+</div>
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	          <h2 class="title">QUIZ - 5</h2>
+<BR>
+  <BR>         
+
+<div class="nob">
+<form>
+<ol class="boldlist">
+<li> For 1 cm gap in air at 760 mm pressure and 20<sup>0</sup>C temperature the Break Down Voltage is -</li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>14 kV <br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>30.3 kV <br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>22.92 kV <br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>40 kV<br><br><br></ul>
+
+
+<li>Sphere gaps are used to measure  -</li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>DC Voltages <br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>AC Voltages <br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>DC, AC peak and impulse voltages  	<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>Only DC and AC peak voltage <br><br><br></ul>
+
+
+<li> Sphere gap BDV measurement is linear and valid for gap spacing less than -</li>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>the Radius of  sphere <br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>the diameter of sphere <br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>Half the radius of sphere <br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>Two times the diameter of sphere<br><br><br></ul>
+
+
+<li>In volt-time characteristics, the breakdown voltage for a negative impulse is _______the positive impulse.</li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>Less Than<br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>Greater Than<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>Equal To <br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>None of these<br><br><br></ul>
+
+
+<li>The main factors that affect the spark over voltage of sphere gap are -</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>Humidity and waveform  <br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>Nearby earthed objects and atmospheric conditions <br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>Diameter of sphere <br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>Gap spacing, diameter & waveform <br><br><br></ul>
+
+
+<li>Impulse ratio of a rod gap - </li>
+<ul><input type=radio value='a' onClick='Engine(6, this.value)'>Unity<br>
+<input type=radio value='b' onClick='Engine(6, this.value)'>Between 1.2 and 1.5<br>
+<input type=radio value='c' onClick='Engine(6, this.value)'>Between 1.6 and 1.8<br>
+<input type=radio value='d' onClick='Engine(6, this.value)'>Between 2 and 2.2<br><br><br></ul>
+
+
+<li>which electrode has minimum breakdown voltage  -</li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>Sphere electrode<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>Pointed electrode <br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>Flat Electrode <br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>Big sphere electrode <br><br><br></ul>
+
+
+<li>The insulation of the modern EHV lines is designed based on -</li>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>The lightning voltage	<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>The switching voltage<br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>Corona<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>RI<br><br><br></ul>
+
+
+<li>Minimum sparking potential of Air is about -</li>
+<ul><input type=radio value='a' onClick='Engine(9, this.value)'>100 V  <br>
+<input type=radio value='b' onClick='Engine(9, this.value)'>4.4 kV	<br>
+<input type=radio value='c' onClick='Engine(9, this.value)'>40 V<br>
+<input type=radio value='d' onClick='Engine(9, this.value)'>325 V<br><br><br></ul>
+
+
+<li>Electrostatic voltmeter can measure -</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>Only DC voltages	<br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>Both DC and AC voltages upto high frequency<br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>Impulse voltages<br>
+<input type=radio value='d' onClick='Engine(10, this.value)'>Only DC and AC peak voltages <br><br><br></ul>
+</ol>
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+    
+
+            </P> </div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+ <div id="sidebar">
+          
+       <ul class="extra-list">
+			<li><a href="../Dreamweaver/objective5.html">Objective</a>
+		  </li>
+			<li><a href="../Dreamweaver/equip5.html">Equipments</a>
+		    </li>
+			<li><a href="../Dreamweaver/connection5.html">Block Diagram</a>			</li>
+			<li><a href="../Dreamweaver/proce5.html">Theory And Procedure</a>			</li>
+			<li><a href="../Dreamweaver/observ5.html"> Observation </a>			</li>
+			<li><a href="../Dreamweaver/sim5.html">Simualtion</a>			</li>
+			<li><a href="../Dreamweaver/video 5.html">Videos of Exp.5</a>        </li>
+            <li><a href="../Dreamweaver/quiz5.html">Quiz</a></li>
+			 <li><a href="../Dreamweaver/feedback5.html">Feedback</a></li>
+</ul>
+</div>
+</div>
+</div></div>
+</body>
+</html>

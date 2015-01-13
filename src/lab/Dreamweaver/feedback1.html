@@ -1,0 +1,187 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<SCRIPT language="JavaScript">
+	
+		function checkOut() {
+			for (x=0; x<document.survey.elements.length; x++) {
+				if (document.survey.elements[x].value == "") {
+					alert("Sorry, you forgot one of the required fields. Please try again."); 
+					break;
+				}
+			}
+			return false;
+		}
+    function totalScore(){
+
+
+
+}
+	
+	</SCRIPT>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+				<li><a href="../Dreamweaver/index.html">Home</a></li>
+			<li><a href="../Dreamweaver/list.html">Experiments</a></li>
+			<li><a href="../Dreamweaver/equip.html">Basic Equipments</a></li>
+			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
+			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
+			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
+                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
+						
+		</ul>
+	
+
+</div>		  
+<!--Menu start Here-->
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	         <h2 class="title">Feedback Form</h2>
+            
+              <div class="nob"><P>
+                <br><br>
+                <B>First Name</B>
+                <INPUT Name="firstname" Size="30" Type="TEXT" MaxLength="30"><br>
+                <B>Last  Name</B>
+                  <INPUT Type="TEXT" Name="lastname" Size="30" /><BR>
+                  <B>E-mailAddress</B>
+                  <INPUT Type="TEXT" Name="emailaddr" Size="28" /><br>
+                  <B> Address</B>
+                  <INPUT Type="TEXT" Name="address" Size="30" /><BR>
+                  <B>City</B>
+                  <INPUT TYPE="TEXT" NAME="city" SIZE="30" />
+                  <b>State</b>
+                  <INPUT NAME="state" SIZE="6" /><br>
+                  <b>Postal Code</b>
+                  <INPUT NAME="zip" SIZE="10" />
+           <b>Country</b>
+                <INPUT NAME="country" SIZE="15" /><br>
+            </p>
+<FORM NAME="survey" onSubmit="return checkOut(this.form)">
+<ol class="boldlist">
+<li> How do you rate the online performance of the experiment?</li>
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+<li>To what degree was the actual lab environment simulated?</li>
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+<li>The measurement and analysis of data was found to be easy</li>
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+
+<li>The manuals were found to be helpful</li>
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+
+<li>The links provided were consistent with the objectives of the experiment ?</li> 
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+
+<li>The results of experiment were easily interpretable</li>
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+<li>A clear understanding of the experiment and related topics was ganied</li>
+<ul><INPUT TYPE="CHECKBOX" NAME="Excellent" VALUE="Excellent" />Excellent
+<INPUT Type="CHECKBOX" Name="V.Good" Value="V.Good" />V.Good
+<INPUT TYPE="CHECKBOX" NAME="Good" VALUE="Good" />Good
+<INPUT Type="CHECKBOX" Name="Average" Value="Average" />Average
+<INPUT TYPE="CHECKBOX" NAME="Poor" VALUE="Poor" />Poor
+<INPUT Type="CHECKBOX" Name="Unsatisfactory" Value="Unsatisfactory" />Unsatisfactory</ul>
+
+
+
+<li>How helpful do you feel the system is?</b><BR/>
+<TEXTAREA Name="comments" Cols="30" Rows="5">Please type any comments here</TEXTAREA>
+
+
+<li>Did you experience any problem?</b><BR/>
+<TEXTAREA Name="comments" Cols="30" Rows="5">Please type any comments here</TEXTAREA>
+
+<li>Is there anything you would like to tell us?</li>
+<TEXTAREA Name="comments" Cols="30" Rows="5">Please type any comments here</TEXTAREA><BR/>
+
+</ol>
+
+			<INPUT Type="SUBMIT" Value="Submit" />
+			<INPUT Type="RESET" Value="Start Over" />
+		</FORM>
+	
+              
+              </div>
+            </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+ <div id="sidebar">
+          
+	
+		       <ul class="extra-list">
+			<li><a href="../Dreamweaver/objective1.html">Objective</a>
+		  </li>
+			<li><a href="../Dreamweaver/equip1.html">Equipments</a>
+		    </li>
+			<li><a href="../Dreamweaver/theory1.html">Theory</a>			</li>
+			<li><a href="../Dreamweaver/connection1.html">Connection Diagram</a>			</li>
+			<li><a href="../Dreamweaver/proce1.html">Procedure</a>			</li>
+			<li><a href="../Dreamweaver/observ1.html"> Observation </a>			</li>
+			<li><a href="../Dreamweaver/sim1.html">Simualtion</a>			</li>
+			<li><a href="../Dreamweaver/video 1.html">Videos of Exp.1</a>        </li>
+            <li><a href="../Dreamweaver/quiz1.html">Quiz</a></li>
+             <li><a href="../Dreamweaver/feedback1.html">Feedback</a></li>
+             <br>
+</ul></div>
+		<!-- end #sidebar -->
+              
+           </div>
+           </div>
+           </div>
+</div>
+</body>
+</html>

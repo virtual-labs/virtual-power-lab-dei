@@ -189,7 +189,7 @@ nav#lab-article-navigation ul li a:focus, nav#experiment-article-navigation ul l
 	margin-left:40px;
 	padding:10px 0 10px;
 }
-.content p
+.content
 {
 	padding-left:40px;
 	width:90%;
@@ -342,18 +342,43 @@ aside
 
 #experiment-article-breadcrumb
 {
- margin-left: 30px;
+	line-height: 0px;	
+        color: #3d414c;
+	padding: 15px 0px;
+	letter-spacing: 0px;
+	position: relative;
+	margin:0px auto auto auto;
+	width: 1000px;
 }
 
 #experiment-article-breadcrumb a:link, #experiment-article-breadcrumb a:visited
 {
- color: #fefefe;
+ 	color: #fefefe;
+	text-decoration:none;
+	position:relative;
 }
 
-#lab-footer, .footer {
-	float: left;
-	margin-top: 100px;
-	margin-bottom: 100px;
-	text-align: center;
-	width: 90%;
+#lab-article-breadcrumb
+{
+	line-height: 0px;
+	color: #3d414c;
+	padding: 15px 0px;
+	letter-spacing: 0px;
+	position: relative;
+	margin:0px auto auto auto;
+	width: 1000px;
+}
+
+#lab-article-breadcrumb a:link, #lab-article-breadcrumb a:visited
+{
+	color: #fefefe;
+	text-decoration:none;
+	position:relative;
+}
+
+/* Added by Chandan on 2013-09-02 for fixing footer *
+ * Tip by Avinash
+ */
+#lab-footer{
+    text-align : center;
 }

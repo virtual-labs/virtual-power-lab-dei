@@ -1,0 +1,45 @@
+/* 
+    Document   : style
+    Created on : 17 Jan, 2011, 6:22:49 AM
+    Author     : user
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/* 
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+
+root { 
+    display: block;
+}
+
+.STBase{
+
+}
+.canvas{
+    border-bottom:  solid 1px;
+    border-left:  solid 1px;
+}
+
+.graph{
+    
+border:  solid 1px;
+}
+.title{
+    color: blue;
+    font: bold small sans-serif;
+    text-decoration: underline;
+}
+.axis{
+    color: red;
+    font: normal small sans-serif;
+    
+}
+.cbPanel{
+    font:  small sans-serif;
+}
+.gwt-Label{
+    font: normal small sans-serif;
+}

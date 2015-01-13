@@ -1,0 +1,198 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var tot_ques=10;
+ans[1]='b';
+ans[2]='d';
+ans[3]='a';
+ans[4]='a';
+ans[5]='b';
+ans[6]='c';
+ans[7]='d';
+ans[8]='a';
+ans[9]='a';
+ans[10]='a';
+
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                       done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+
+			
+				
+
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+			<li><a href="../Dreamweaver/index.html">Home</a></li>
+			<li><a href="../Dreamweaver/list.html">Experiments</a></li>
+			<li><a href="../Dreamweaver/equip.html">Basic Equipments</a></li>
+			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
+			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
+			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
+                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
+						 
+		</ul>
+</div>
+	<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	          <h2 class="title">QUIZ - 4</h2>
+<BR>
+  <BR>         
+<P>
+<div class="nob">
+<form>
+<ol class="boldlist">
+<li>Dielectric oil used in transformer is </li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>Vegetable oil <br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>Refined Mineral oil <br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>Synthetic oil <br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>None of the above  
+<br><br><br></ul>
+
+
+<li> Oil used in transformer for- </li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>Cooling<br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>Dielectric<br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>Lubricating<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>Both for cooling and dielectric<br><br><br></ul>
+
+
+<li>The flash temperature of dielectric oil used in transformer</li>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>140<sup>0</sup> C<br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>200<sup>0</sup> C<br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>300<sup>0</sup> C<br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>30<sup>0</sup> C<br><br><br></ul>
+
+
+<li>The dielectric strength of transformer oil is- </li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>25 kV/mm.<br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>50 kV/mm.<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>12 kV/mm.<br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>10 kV/mm.<br><br><br></ul>
+
+
+<li>The color of good transformer oil is-</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>Dark Black<br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>Transparent Yellow<br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>Dark Blue<br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>None of the above<br><br><br></ul>
+
+
+<li>When oil decomposed it liberates-</li>
+<ul><input type=radio value='a' onClick='Engine(6, this.value)'>Carbon </sub><br>
+<input type=radio value='b' onClick='Engine(6, this.value)'>Hydrogen<br>
+<input type=radio value='c' onClick='Engine(6, this.value)'>Carbon and Hydrogen<br>
+<input type=radio value='d' onClick='Engine(6, this.value)'>None<br><br><br></ul>
+
+
+<li>Dielectric strengths of Air at NTP is</li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>50 kV/mm<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>25 kV/mm<br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>12 kV/mm<br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>3 kV/mm<br><br><br></ul>
+
+
+<li>The Break Down Voltage (BDV) of transformer oil is measured when-</li>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>One point flash occurs<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>Two point flash occurs<br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>Multi point flash occurs<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>None of the above<br><br><br></ul>
+
+
+<li>The most commonly used unit of dielectric strength is - </li>
+<ul><input type=radio value='a' onClick='Engine(9, this.value)'>kV/mm.<br>
+<input type=radio value='b' onClick='Engine(9, this.value)'>V/cm.<br>
+<input type=radio value='c' onClick='Engine(9, this.value)'>MV/mm.<br>
+<input type=radio value='d' onClick='Engine(9, this.value)'>kV/m.<br><br><br></ul>
+
+
+<li>The maximum pour point temperature of dielectric oil is-</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>-6<sup>0</sup> C<br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>10<sup>0</sup> C<br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>1<sup>0</sup> C<br>
+<input type=radio value='d' onClick='Engine(10,this.value)'>50<sup>0</sup> C<br><br><br></ul>
+</ol>
+
+
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+            </P> </div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+ <div id="sidebar">
+          
+		<ul class="extra-list">
+			<li><a href="../Dreamweaver/objective4.html">Objective</a>
+		  </li>
+			<li><a href="../Dreamweaver/equip4.html">Equipments</a>
+		    </li>
+			
+			<li><a href="../Dreamweaver/connection4.html">Connection Diagram</a>			</li>
+			<li><a href="../Dreamweaver/proce4.html">Theory And Procedure</a>			</li>
+			<li><a href="../Dreamweaver/observ4.html"> Observation </a>			</li>
+			<li><a href="../Dreamweaver/sim4.html">Simualtion</a>			</li>
+			<li><a href="../Dreamweaver/video 4.html">Videos of Exp.4</a>        </li>
+            <li><a href="../Dreamweaver/quiz4.html">Quiz</a></li>
+			 <li><a href="../Dreamweaver/feedback4.html">Feedback</a></li> 
+</ul>
+</div>
+</div>
+</div></div></div>	
+</body>
+</html>
+
+
