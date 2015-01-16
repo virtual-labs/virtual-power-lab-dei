@@ -42,7 +42,7 @@
                     }, 
                     "department": "", 
                     "institute": "Dayalbagh Educational Institute", 
-                    "name": "Dr. D. K. Chaturvedi", 
+                    "name": "Prof. D.K. Chaturvedi", 
                     "organization": "DEI", 
                     "role": "Project Incharge", 
                     "title": "Virtual Power Lab", 
@@ -58,7 +58,7 @@
                     "department": "Electrical Engineering", 
                     "institute": "Dayalbagh Educational Institute", 
                     "name": "", 
-                    "organization": "", 
+                    "organization": "DEI", 
                     "role": "", 
                     "title": "", 
                     "web": ""
@@ -70,10 +70,10 @@
                         "mobile_number": "", 
                         "office_number": ""
                     }, 
-                    "department": "", 
+                    "department": "Faculty of Engineering", 
                     "institute": "Dayalbagh Educational Institute", 
-                    "name": "", 
-                    "organization": "", 
+                    "name": "Prof. D.K. Chaturvedi", 
+                    "organization": "DEI", 
                     "role": "", 
                     "title": "", 
                     "web": ""
