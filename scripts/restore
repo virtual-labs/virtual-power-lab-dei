@@ -5,4 +5,4 @@
 # Since there is no database being used for Computer Programming Lab, 
 # the script does nothing. 
 
-echo "There is no database used for the lab."
+#"There is no database used for the lab.""
