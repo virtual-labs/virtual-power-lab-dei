@@ -8,4 +8,4 @@
 # ./scripts/stop
 
 # stops the Apache service
-service apache2 stop
+#service apache2 stop
