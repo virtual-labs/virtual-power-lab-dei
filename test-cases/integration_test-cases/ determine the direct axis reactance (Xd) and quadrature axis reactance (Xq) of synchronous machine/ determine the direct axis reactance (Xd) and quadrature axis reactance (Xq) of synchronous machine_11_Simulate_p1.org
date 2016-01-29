@@ -1,0 +1,30 @@
+* Author: Nihanth
+* Date Created: 29 Jan 2016
+* Environment
+  - OS: Windows 7, Ubuntu-16.04,Centos-6
+  - Browsers: Firefox-42.0,Chrome-47.0,chromium-45.0
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To Simulate the “ToTo determine the direct axis reactance (Xd) and quadrature axis reactance (Xq) of synchronous machine” experiment
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/virtual-power-lab-dei/blob/master/test-cases/integration_test-cases/ determine the direct axis reactance (Xd) and quadrature axis reactance (Xq) of synchronous machine/ determine the direct axis reactance (Xd) and quadrature axis reactance (Xq) of synchronous machine_01_Usability_smk.org][ determine the direct axis reactance (Xd) and quadrature axis reactance (Xq) of synchronous machine_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the Simulation link 
+  2. It should re-direct to the Simulation page
+  3. Click on Simulation for Xd and Xq .
+
+* Expected result
+  1. Simulation page should be opened
+  2. Content should be present with no distortions and Junk character
+  3. A new tab should be opened with the Simulation Process.
+
+* Review/comments
+
+
