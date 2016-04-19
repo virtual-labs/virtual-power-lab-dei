@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html >
 <head><title>Virtual Labs - DEI</title>
@@ -8,6 +7,7 @@
 var ans = new Array;
 var done = new Array;
 var score = 0;
+var count_ques = 0;
 var tot_ques=10;
 ans[1]='a';
 ans[2]='a';
@@ -22,8 +22,9 @@ ans[10]='d';
 function Engine(question, answer) {
         if (answer != ans[question]) {
                 if (!done[question]) {
-                       done[question] = -1;
+                        done[question] = -1;
                         alert('Wrong!    The right answer is    ' + ans[question]);
+						count_ques++;
                        }
                else {
                        alert('You have already answered that!');
@@ -34,10 +35,7 @@ function Engine(question, answer) {
                        done[question] = -1;
                        score++;
                        alert('Correct!     Great!' );
-
-			
-				
-
+					   count_ques++;
                        }
                else {
                        alert('You have already answered that!');
@@ -45,11 +43,15 @@ function Engine(question, answer) {
                }
 }
 function Test_result() {
-        if (score == tot_ques) {
+        if(count_ques < tot_ques)
+			{
+			alert("Please solve all questions!");
+			}
+        else if (score == tot_ques) {
                 alert('Oh!  You got full points!');
                 }
         else {
-                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.')
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.');
                 }
 }
 //-->
@@ -69,7 +71,7 @@ function Test_result() {
 			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
 			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
 			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
-                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/feedback.php">Feedback</a></li>			
                         <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
 						 
 		</ul>
@@ -186,7 +188,6 @@ function Test_result() {
 			<li><a href="../Dreamweaver/sim8.html">Simualtion</a></li>
 			<li><a href="../Dreamweaver/video 8.html">Videos of Exp.8</a></li>
             <li><a href="../Dreamweaver/quiz8.html">Quiz</a></li>
-			<li><a href="../Dreamweaver/feedback8.html">Feedback</a></li>
 </ul></div>
 		<!-- end #sidebar -->
               

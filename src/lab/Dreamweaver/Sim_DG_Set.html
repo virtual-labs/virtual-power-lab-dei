@@ -1,7 +1,4 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-
 
 <html>
 
@@ -35,6 +32,55 @@ var Rf1=document.the_form.varRf.value;
 var Ra1=document.the_form.varRa.value;
 var Rfg1=document.the_form.varRfg.value;
 
+if(v1=="")
+	{
+	alert("Please enter variation in Motor");
+	document.the_form.valv.value();
+	return false;
+	}
+else if(v1 < -25 || v1 > 25)
+	{
+	alert("'Unrealistic value' Outside range");
+	document.the_form.valv.value();
+	return false;
+	}
+if(Rf1=="")
+	{
+	alert("Please enter variation in External Rf of Motor");
+	document.the_form.varRf.value();
+	return false;
+	}
+else if(Rf1 < 0 || Rf1 > 30)
+	{
+	alert("'Unrealistic value' Outside range");
+	document.the_form.varRf.value();
+	return false;
+	}
+if(Ra1=="")
+	{
+	alert("Please enter variation in External Ra of Motor");
+	document.the_form.varRa.value();
+	return false;
+	}
+else if(Ra1 < 0 || Ra1 > 20)
+	{
+	alert("'Unrealistic value' Outside range");
+	document.the_form.varRa.value();
+	return false;
+	}
+if(Rfg1=="")
+	{
+	alert("Please enter variation in Rf of Generators");
+	document.the_form.varRfg.value();
+	return false;
+	}
+else if(Rfg1 < 0 || Rfg1 > 30)
+	{
+	alert("'Unrealistic value' Outside range");
+	document.the_form.varRfg.value();
+	return false;
+	}
+else{
 var v = v - (- v1);
 var Rf=Rf- (-Rf1);
 var Ra=Ra- (-Ra1);	
@@ -62,12 +108,6 @@ document.the_form.valvg.value = (Math.round(vg*100)/100);
 document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
 }
 
-
-
-    
-    
-    
-
     function timeimgs(numb)
 
     {
@@ -77,110 +117,59 @@ document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
         if (document.images)
 
     {
-
       dcmotor1 = new Image();
 
       dcmotor1.src = "r.GIF"
-
- 
 
       dcmotor2 = new Image();
 
       dcmotor2.src = "g.GIF";
 
- 
-
       dcmotor3 = new Image();
 
       dcmotor3.src = "y.GIF";
-
-      
-      
-
     }
-
-
-     delay=800; 
-      thetimer = setTimeout("imgturn('" +numb+ "')", delay);
-    
-      } 
-      else
-      {
+    delay=800; 
+    thetimer = setTimeout("imgturn('" +numb+ "')", delay);
+    } 
+    else
+    {
       delay=100-cumer;
       if (document.images)
-
     {
-
       dcmotor1 = new Image();
 
       dcmotor1.src = "r1.GIF"
-
- 
 
       dcmotor2 = new Image();
 
       dcmotor2.src = "g1.GIF";
 
- 
-
       dcmotor3 = new Image();
 
       dcmotor3.src = "y1.GIF";
-
-      
-      
-
     }
-
-      
-      thetimer = setTimeout("imgturn('" +numb+ "')", delay);
-  
-      }  
-	
-	
+    thetimer = setTimeout("imgturn('" +numb+ "')", delay);
+    }  
     }
-
-   
 
     function imgturn(numb)
-
     {
-
       if (document.images)
-
       {
-
-        
         if (numb == "3")
-
         {
-
           document["dcmotor"].src = eval("dcmotor3.src");
-
           timeimgs('1');
-
         }
-
         else
-
         {
-
           document["dcmotor"].src = eval("dcmotor" + numb + ".src");
-
           timeimgs(numb = ++numb);
-
         }
-
       }
-
     }
-
-    
-    
-
- 
-
-  
+	}
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -188,28 +177,27 @@ document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
 
 <body>
 <h1><font color="#0076EC"><center>Simulation of Motor-Generator Set</center></font></h1>
-
 <form name="the_form">
 <h2>
 <font color="#0076EC">INPUTS</font><br></h2>
-<div id="sim">Variation in Motor V<sub>t</sub> (-25(V) to +25(V)):
-  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="valv"> 
- &nbsp; Variation in external R<sub>f</sub> of Motor(0 - 30 &Omega;):
- <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="varRf" />
+<div id="sim">Motor V<sub>m</sub> = 230V + Variation (&Delta;V<sub>m</sub>)
+  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="valv"> &plusmn;25V 
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; External R<sub>f</sub> of Motor = 160&Omega; + Variation (&Delta;R<sub>f</sub>)
+ <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRf" /> (0-30 &Omega;)
 <div id="sim2"></div>
 </div>
 <br />
 <form name="the_form">
 <form name="the_form">
-<div id="sim">Variation in external R<sub>a </sub>of Motor (0 - 20 &Omega;):
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="varRa"> 
-&nbsp;
-Variation in R<sub>f</sub> of Generators (0 - 30 &Omega;): 
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="varRfg" />
+<div id="sim">External R<sub>a</sub> of Motor = 1&Omega; + Variation (&Delta;R<sub>a </sub>)
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRa"> (0-20 &Omega;)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+R<sub>fg</sub> of Generators = 160&Omega; + Variation (&Delta;R<sub>fg</sub>): 
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRfg" /> (0-30 &Omega;)
 <form name="the_form">
   <div id="sim3"></div>
   <center>
-    <img src="images/exp1/alternator.jpg" />
+    <img src="images/exp1/alternator.jpg" width=250 height=180/>
   </center>
   <h2> <font color="#0076EC">OUTPUTS</font><br />
   </h2>
@@ -253,5 +241,4 @@ Total voltage and frequency error :
 </form>
 </form>
 </body>
-
 </html>

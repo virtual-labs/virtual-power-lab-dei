@@ -1,4 +1,3 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
 <html>
@@ -29,7 +28,33 @@ Kw=0.995; Ts=215; c=0.006; v=220;
 
 var w1=document.the_form.valw.value;
 var Rf1=document.the_form.varRf.value;
- 
+
+if(w1=="")
+		{
+		alert("Please enter speed");
+		document.the_form.valw.focus();
+		return false;
+		}
+else if(w1 < -150 || w1 > 150)
+		{
+		alert("'Unrealistic value' Outside range");
+		document.the_form.valw.focus();
+		return false;
+		}
+else if(Rf1=="")
+		{
+		alert("Please enter value of Rf");
+		document.the_form.varRf.focus();
+		return false;
+		}
+else if(Rf1 < -10 || Rf1 > 10)
+		{
+		alert("'Unrealistic value' Outside range");
+		document.the_form.varRf.focus();
+		return false;
+		}
+else
+{
  w=w - (-w1); 
  Rf=Rf- (-Rf1);
 
@@ -39,6 +64,7 @@ var    v = 4.44 * f * c*fc * Kw * Ts;
 document.the_form.freq.value = (Math.round(f*100)/100);
 document.the_form.valv.value = (Math.round(v*100)/100);
 }
+}
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,21 +73,20 @@ document.the_form.valv.value = (Math.round(v*100)/100);
 
 <ol align="justified">
 
-
 <form name="the_form">
 <h3 class="color">
 INPUTS<br></h3>
-<div id="sim">Change in Speed(rpm):
-<input name="valw" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" ><br><br></div>
+<div id="sim">Speed w = 1500rpm + Change in Speed (&Delta;w)
+<input name="valw" type = "text" style="heighta:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" > &plusmn;150V<br><br></div>
 <form name="the_form">
-<div id="sim">Variation in R<sub>f</sub>(&Omega;):
-  <input name="varRf" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4"><br></div>
+<div id="sim">R<sub>f</sub><sub>g</sub> = 160&Omega; + Variation (&Delta;R<sub>f</sub><sub>g</sub>)
+  <input name="varRf" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4"> &plusmn;10&Omega;<br></div>
 <h3 class="color">
 OUTPUTS<br></h3>
 <div id="sim">Frequency(Hz):  
-<input name="freq" type = "text" style="height:40px;font-size:20pt; overflo</div>w:hidden;" size="10" maxlength="4" lineLength="6"><br><br>
+<input name="freq" type = "text" style="height:40px;font-size:20pt; overflo</div>w:hidden;" size="5" maxlength="4" lineLength="6"><br><br>
 <div id="sim">Terminal Voltage(V):  
-<input name="valv" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6"><br><br></div>
+<input name="valv" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" lineLength="6"><br><br></div>
 <a href="#" onClick ="SynModel (); return false;"><br>
 <font color="#0076EC">
 <ul><h2>

@@ -29,31 +29,32 @@ Name       : virtual power labs
 			<li><a href="../Dreamweaver/measurement.html">Measurements</a></li>
 			<li><a href="../Dreamweaver/char.html">Charactristics</a></li>
 			<li><a href="../Dreamweaver/safety.html">LAB Safety</a></li>
-                        <li><a href="../Dreamweaver/feedback.html">Feedback</a></li>			
+                        <li><a href="../Dreamweaver/feedback.php">Feedback</a></li>			
                         <li><a href="../Dreamweaver/lab.html">DEI PowerLab</a></li>
 						 
 		</ul>
 </div>
 	<!-- end #menu -->
-</body>
-	<body>
-
-<center>
-<script type='text/javascript'
-src='../Dreamweaver/videos/player/jwplayer.js'></script> 
-	
-<div id='mediaspace'>This text will be replaced</div> 
-	
-<script type='text/javascript'>
-jwplayer('mediaspace').setup({ 
-'flashplayer': 'player/player.swf',
-'provider':'http',
-'file': './videos/exp7.flv',
-'controlbar': 'bottom',
-'width': '770',
-'height': '420'});
-</script> 
-	
+<br/><br/><br/>
+<center>	
+<object id="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" name="player" width="600" height="475"> 
+	<param name="movie" value="player.swf"/> 
+	<param name="allowfullscreen" value="true"/> 
+	<param name="wmode" value="transparent"/>
+	<param name="allowscriptaccess" value="always"/> 
+	<param name="flashvars" value="file=./videos/exp7.flv&autostart=true&repeat=always"/>		
+	<embed 
+		wmode="transparent"
+		type="application/x-shockwave-flash"
+		id="player2"
+		name="player2"
+		src="player.swf" 
+		width="600" 
+		height="475"
+		allowscriptaccess="always" 
+		allowfullscreen="true"
+		flashvars="file=./videos/exp7.flv&autostart=true&repeat=always"/> 
+	</object>
 </center>
 </body>
 </html>
