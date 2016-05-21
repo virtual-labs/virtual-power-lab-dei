@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html >
 <title>Virtual Labs - DEI</title>
@@ -116,6 +119,7 @@ function checkOut()
 	         <h2 class="title">Feedback Form</h2>
               <div class="nob">
 <FORM NAME="survey" METHOD="POST" onSubmit="return checkOut()">
+<center><b style="font-size:18px; color:red; text-decoration:blink;">&nbsp;<span id="info"></span></b></center>
                 <br>
                 <B>Name:</B><img src="images/arsterix.gif">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <INPUT Name="name" Size="30" Type="TEXT" MaxLength="30"><br>
@@ -197,11 +201,18 @@ function checkOut()
 <li>Is there anything you would like to tell us?</li>
 <TEXTAREA Name="comments" Cols="65" Rows="2"></TEXTAREA>
 </ol>
+<label for="securitycode">Security Code<img src="images/arsterix.gif"></label>
+<input id="securitycode" name="securitycode" type="text" size="11"/>&nbsp;&nbsp;&nbsp;
+<img src="captcha.php" id="captcha_security" />&nbsp;&nbsp;&nbsp;
+<a href="#" onclick="document.getElementById('captcha_security').src='captcha.php?'+Math.random();" id="change-captcha">
+<img src="images/refresh_icon.jpg" height="25" width="25" title="Refresh"></a>
 <center><INPUT Type="SUBMIT" Name="send" Value="Submit" />
 <INPUT Type="RESET" Value="Start Over" /></center>
 </FORM>
 <?php		   
 if (isset($_POST['send']))
+{
+if( $_SESSION['code'] == $_POST['securitycode'] ) 
 {
 //Sending an automatic email
 $to="powerlabdei@gmail.com";
@@ -213,6 +224,9 @@ $message="Name=".$_POST["name"]."<br>Email ID=".$_POST["email"]."<br>Address=".$
 @mail($to,$subject,$message,$headers);
 @mail($_POST["email"],"Welcome","Thankyou for sending feedback. You can give your valuable suggestions.",$headers);
 echo ("<SCRIPT LANGUAGE='JavaScript'>alert('Thankyou, your feedback has been submitted');</SCRIPT>");
+}
+else echo "<script language=\"javascript\">document.getElementById('info').innerHTML=\"Invalid Security Code\"</script>";
+unset($_SESSION['code']);
 }
 ?>
               </div>
