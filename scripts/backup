@@ -1,0 +1,7 @@
+#/bin/bash
+# Backup Script for surveying-lab-iitr Lab
+
+# Backup Script takes the backup of the database used by the lab.
+# Since there is no database being used for Biomedical Instrumentation Lab. 
+# the script does nothing. 
+# "There is no database used for the lab."

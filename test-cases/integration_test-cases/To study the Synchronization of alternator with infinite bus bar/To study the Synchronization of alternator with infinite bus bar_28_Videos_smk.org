@@ -1,0 +1,28 @@
+* Author: Nihanth
+* Date Created: 29 Jan 2016
+* Environment
+  - OS: Windows 7, Ubuntu-16.04,Centos-6
+  - Browsers: Firefox-42.0,Chrome-47.0,chromium-45.0
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To view the Videos  of the "To study the Synchronization of alternator with infinite bus bar" Experiment
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/virtual-power-lab-dei/blob/master/test-cases/integration_test-cases/To study the Synchronization of alternator with infinite bus bar/To study the Synchronization of alternator with infinite bus bar_01_Usability_smk.org][To study the Synchronization of alternator with infinite bus bar_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the Videos   link 
+  2. It should re-direct to the Videos  page
+
+* Expected result
+  1. Videos   page should be opened
+  2. Content should be present with no distortions and Junk characters
+
+* Review/comments
+
+

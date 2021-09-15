@@ -1,0 +1,38 @@
+* Author: Nihanth
+* Date Created: 29 Jan 2016
+* Environment
+  - OS: Windows 7, Ubuntu-16.04,Centos-6
+  - Browsers: Firefox-42.0,Chrome-47.0,chromium-45.0
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+  - Plugin : IcedTea
+
+* Objective
+  - To Simulate the “To measure the dielectric Strength of transformer oil ” experiment
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/virtual-power-lab-dei/blob/master/test-cases/integration_test-cases/To measure the dielectric Strength of transformer oil/To measure the dielectric Strength of transformer oil_01_Usability_smk.org][To measure the dielectric Strength of transformer oil_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the Simulation link 
+  2. It should re-direct to the Simulation page
+  3. Click on Checking the Dielectric Strength of Transformer Oil
+  4. Increase the voltage  
+  5. Click on the restart test button
+  6. Now again increase the voltage value.
+  7. Click on the change transformer oil button.
+  8. Repeat 4,5 and 6 steps.
+
+* Expected result
+  1. Simulation page should be opened
+  2. Content should be present with no distortions and Junk character
+  3. A new tab should be opened with the Simulation Process.
+  4. The voltage to time graph should also vary according to the voltage value.
+  5. The graph between the voltage and time should be erased
+
+* Review/comments
+
+

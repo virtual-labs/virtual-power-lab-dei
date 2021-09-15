@@ -1,0 +1,31 @@
+* Author: Nihanth
+* Date Created: 29 Jan 2016
+* Environment
+  - OS: Windows 7, Ubuntu-16.04,Centos-6
+  - Browsers: Firefox-42.0,Chrome-47.0,chromium-45.0
+  - Bandwidth : 100Mbps
+  - Hardware Configuration:8GBRAM , 
+  - Processor:i5
+
+* Objective
+  - To view the Connection Diagram of “To measure the dielectric Strength of transformer oil ” experiment from the theory and Procedure page
+
+* Pre conditions
+  - Refer to first test case [[https://github.com/Virtual-Labs/virtual-power-lab-dei/blob/master/test-cases/integration_test-cases/To measure the dielectric Strength of transformer oil/To measure the dielectric Strength of transformer oil_01_Usability_smk.org][To measure the dielectric Strength of transformer oil_01_Usability_smk.org]]
+
+* Post conditions
+  - Nil
+* Test Steps
+  1. Click on the Procedure link 
+  2. It should re-direct to the Procedure page
+  3. Click on the link "Fig. Click here to see figure".
+
+* Expected result
+  1. Procedure page should be opened
+  2. Content should be present with no distortions and Junk characters
+  3. It should redirect to the connection diagram page and the diagram should be displayed on the screen.
+  4. Content should be present with no distortions and Junk characters
+
+* Review/comments
+
+

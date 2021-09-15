@@ -1,0 +1,11 @@
+#!/bin/bash
+# stopscript stops all the services on the container required to
+# run the lab for the safe dissembling of the lab
+
+# Usage of the Script 
+
+# To use stop, run the command
+# ./scripts/stop
+
+# stops the Apache service
+service apache2 stop
