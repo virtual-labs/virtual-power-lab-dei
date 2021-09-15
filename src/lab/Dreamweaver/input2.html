@@ -21,6 +21,16 @@ body {
 </style>
 <script type="text/javascript">
 
+var prev_freq = "";
+var count = 0;
+var prev_valv = "";
+var prev_w1 = "";
+var prev_Rf1 = "";
+
+
+var f = document.createElement("IMG");
+var v = document.createElement("IMG");
+
 function SynModel () {
 
 w=1500; Rf=150;P=4;
@@ -37,7 +47,7 @@ if(w1=="")
 		}
 else if(w1 < -150 || w1 > 150)
 		{
-		alert("'Unrealistic value' Outside range");
+		alert("'Unrealistic value of w' Outside range");
 		document.the_form.valw.focus();
 		return false;
 		}
@@ -49,20 +59,108 @@ else if(Rf1=="")
 		}
 else if(Rf1 < -10 || Rf1 > 10)
 		{
-		alert("'Unrealistic value' Outside range");
+		alert("'Unrealistic value of Rf' Outside range");
 		document.the_form.varRf.focus();
 		return false;
 		}
 else
 {
+w1 = Number(w1);
+Rf1 = Number(Rf1);
+if(w1 == ""){
+  w1 = 0;
+ }
+if(Rf1 == ""){
+  Rf1 = 0;
+ }
+
+if(count > 0){
+    if(prev_w1 > w1){
+ 
+       document.getElementById("placeherew1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_w1 == w1){
+
+       document.getElementById("placeherew1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_w1 < w1){
+       
+       document.getElementById("placeherew1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+
+ if(prev_Rf1 > Rf1){
+ 
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_Rf1 == Rf1){
+
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_Rf1 < Rf1){
+       
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+}
+prev_w1 = w1;
+prev_Rf1 = Rf1;
+
  w=w - (-w1); 
  Rf=Rf- (-Rf1);
 
 var    f = P * w / 120;
 var    fc = v / Rf;
 var    v = 4.44 * f * c*fc * Kw * Ts;
-document.the_form.freq.value = (Math.round(f*100)/100);
-document.the_form.valv.value = (Math.round(v*100)/100);
+
+//calculation for frequency.
+
+var freq = (Math.round(f*100)/100);
+document.the_form.freq.value = freq;
+
+ if(count > 0){
+    if(prev_freq > freq){
+ 
+       document.getElementById("placeheref").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_freq == freq){
+
+       document.getElementById("placeheref").src = "../Dreamweaver/images/neutral_out.jpg";
+
+    }
+    else if (prev_freq < freq){
+       
+       document.getElementById("placeheref").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+  prev_freq = freq;
+
+//calculation for voltage.
+
+  var valv = (Math.round(v*100)/100);
+  document.the_form.valv.value = valv;
+
+  if(count > 0){
+    if(prev_valv > valv){  
+
+      document.getElementById("placeherev").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_valv == valv){
+    
+      document.getElementById("placeherev").src = "../Dreamweaver/images/neutral_out.jpg";
+    }
+    else if (prev_valv < valv){
+      
+      document.getElementById("placeherev").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+ prev_valv = valv;
+ count = count + 1;
+
 }
 }
 </script>
@@ -75,18 +173,25 @@ document.the_form.valv.value = (Math.round(v*100)/100);
 
 <form name="the_form">
 <h3 class="color">
+
 INPUTS<br></h3>
+
 <div id="sim">Speed w = 1500rpm + Change in Speed (&Delta;w)
-<input name="valw" type = "text" style="heighta:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" > &plusmn;150V<br><br></div>
+<input name="valw" type = "text" style="heighta:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" > (-150 to 150rpm) <img id ="placeherew1" width = "50" height = "50" align = "top"><br><br></div>
+
 <form name="the_form">
 <div id="sim">R<sub>f</sub><sub>g</sub> = 160&Omega; + Variation (&Delta;R<sub>f</sub><sub>g</sub>)
-  <input name="varRf" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4"> &plusmn;10&Omega;<br></div>
+  <input name="varRf" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4"> (-10 to 10&Omega;) <img id ="placehereRf1" width = "50" height = "50" align = "top"><br></div>
+
 <h3 class="color">
 OUTPUTS<br></h3>
+
 <div id="sim">Frequency(Hz):  
-<input name="freq" type = "text" style="height:40px;font-size:20pt; overflo</div>w:hidden;" size="5" maxlength="4" lineLength="6"><br><br>
+<input name="freq" type = "text" style="height:40px;font-size:20pt; overflo</div>w:hidden;" size="5" maxlength="4" lineLength="6"> <img id ="placeheref" width = "50" height = "50" align = "top"><br><br>
+
 <div id="sim">Terminal Voltage(V):  
-<input name="valv" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" lineLength="6"><br><br></div>
+<input name="valv" type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" lineLength="6"> <img id ="placeherev" width = "50" height = "50" align = "top"><br><br></div>
+
 <a href="#" onClick ="SynModel (); return false;"><br>
 <font color="#0076EC">
 <ul><h2>

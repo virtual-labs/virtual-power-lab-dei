@@ -1,0 +1,4 @@
+4 & 5-NO contact
+1,2&3-NC contacts
+49 - Thermal overload relay
+51-Numerical relay

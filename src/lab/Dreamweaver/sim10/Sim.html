@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Simulation 10</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <script src="script.js"></script>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+
+            $(".FaultBox1, .FaultBox2, .FaultBox3, .FaultBox4").hide();
+            $("h3").hide();
+
+            $("#button1").click(function() {
+                $(".FaultBox1").hide(300);
+                $(".FaultBox2").hide(300);
+                $(".FaultBox3").hide(300);
+                $(".FaultBox4").hide(300);
+                $("h3").hide(200);
+            });
+
+            $("#button2").click(function() {
+                $(".FaultBox1").show(300);
+                $(".FaultBox2").hide(300);
+                $(".FaultBox3").hide(300);
+                $(".FaultBox4").hide(300);
+                $("h3").show(200);
+            });
+
+            $("#button3").click(function() {
+                $(".FaultBox1").hide(300);
+                $(".FaultBox2").show(300);
+                $(".FaultBox3").hide(300);
+                $(".FaultBox4").hide(300);
+                $("h3").show(200);
+            });
+
+            $("#button4").click(function() {
+                $(".FaultBox1").hide(300);
+                $(".FaultBox2").hide(300);
+                $(".FaultBox3").show(300);
+                $(".FaultBox4").hide(300);
+                $("h3").show(200);
+            });
+
+            $("#button5").click(function() {
+                $(".FaultBox1").hide(300);
+                $(".FaultBox2").hide(300);
+                $(".FaultBox3").hide(300);
+                $(".FaultBox4").show(300);
+                $("h3").show(200);
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <div class="Container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-2">
+                    <h1>Choose Connection of Transformer</h1>
+                    <div class="Connection">
+                        <ul style="list-style:none">
+                            <li><button id="button1" onclick="imachange1()">Initial</button></li>
+                            <li><button id="button2" onclick="imachange2()">Star-Star</button></li>
+                            <li><button id="button3" onclick="imachange3()">Star-Delta</button></li>
+                            <li><button id="button4" onclick="imachange4()">Delta-Star</button></li>
+                            <li><button id="button5" onclick="imachange5()">Delta-Delta</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <h3>Choose Fault</h3>
+                    <div class="FaultBox1">
+                        <h4 style="text-align:center">
+                            <bold><em>Star-Star</em></bold>
+                        </h4>
+                        <ul style="list-style:none">
+                            <li><button id="button11" onclick="fault11()">LG Fault</button></li>
+                            <li><button id="button12" onclick="fault12()">LL Fault</button></li>
+                            <li><button id="button13" onclick="fault13()">LLL Fault</button></li>
+                            <li><button id="button14" onclick="fault14()">LLLG Fault</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="FaultBox2">
+                        <h4 style="text-align:center">
+                            <bold><em>Star-Delta</em></bold>
+                        </h4>
+                        <ul style="list-style:none">
+                            <li><button id="button21" onclick="fault21()">LG Fault</button></li>
+                            <li><button id="button22" onclick="fault22()">LL Fault</button></li>
+                            <li><button id="button23" onclick="fault23()">LLL Fault</button></li>
+                            <li><button id="button24" onclick="fault24()">LLLG Fault</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="FaultBox3">
+                        <h4 style="text-align:center">
+                            <bold><em>Delta-Star</em></bold>
+                        </h4>
+                        <ul style="list-style:none">
+                            <li><button id="button31" onclick="fault31()">LG Fault</button></li>
+                            <li><button id="button32" onclick="fault32()">LL Fault</button></li>
+                            <li><button id="button33" onclick="fault33()">LLL Fault</button></li>
+                            <li><button id="button34" onclick="fault34()">LLLG Fault</button></li>
+                        </ul>
+                    </div>
+
+                    <div class="FaultBox4">
+                        <h4 style="text-align:center">
+                            <bold><em>Delta-Delta</em></bold>
+                        </h4>
+                        <ul style="list-style:none">
+                            <li><button id="button41" onclick="fault41()">LG Fault</button></li>
+                            <li><button id="button42" onclick="fault42()">LL Fault</button></li>
+                            <li><button id="button43" onclick="fault43()">LLL Fault</button></li>
+                            <li><button id="button44" onclick="fault44()">LLLG Fault</button></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-md-8" style="margin-left:-100px">
+                    <div class="imagebox">
+                        <div class="imabox">
+                            <img id="image1" src="ima/plu/On.png" ;></img>
+                        </div>
+                        <div class="imabox">
+                            <img id="image" src="ima/1.png" ;></img>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+</body>
+
+</html>

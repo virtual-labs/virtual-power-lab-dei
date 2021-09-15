@@ -1,0 +1,119 @@
+body {
+    background: white;
+    margin: inherit;
+}
+
+h1 {
+    text-align: inherit;
+    font-family: monospace;
+}
+
+div.Connection {
+    text-align: center;
+    height: 262px;
+    width: 140px;
+    background-color: darkgoldenrod;
+    border: 2px solid grey;
+    font-size: 30px;
+    border-radius: 10%;
+    box-shadow: 5px 5px grey;
+}
+
+button {
+    text-align: center;
+    background-color: #fff;
+    border-radius: 12px;
+    height: 40px;
+    width: 120px;
+    margin-left: -40px;
+    color: black;
+    font-size: 20px;
+    font-family: cursive;
+    border: 2px solid black;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+button:hover{
+    text-align: center;
+    border-radius: 10px;
+    height: 42px;
+    width: 125px;
+    margin-left: -40px;
+    color: black;
+    font-size: 20px;
+    font-family: cursive;
+    border: 3px solid black;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+
+#button1{
+    background:burlywood;
+}
+
+div.jumbotron {
+    background: #fff;
+}
+
+div.Container {
+    margin: auto;
+}
+
+div.imabox {
+    height: auto;
+    width: 160px;
+    margin-top: 100px;
+    margin-left: 80px;
+    float: left;
+}
+
+#button11,
+#button12,
+#button13,
+#button14,
+#button21,
+#button22,
+#button23,
+#button24,
+#button31,
+#button32,
+#button33,
+#button34,
+#button41,
+#button42,
+#button43,
+#button44{
+    background-color: white;
+    width: 120px;
+    margin-left: -30px;
+}
+
+.FaultBox1,
+.FaultBox2,
+.FaultBox3,
+.FaultBox4{
+    height: 250px;
+    width: 140px;
+    background-color: lightblue;
+    border: 2px solid grey;
+    font-size: 30px;
+    border-radius: 10%;
+    margin-top: 140px;
+    margin-right: 0px;
+    box-shadow: 5px 5px grey;
+}
+
+.Faultcontainer{
+    border: 2000px solid black;
+}
+
+
+
+
+
+
+

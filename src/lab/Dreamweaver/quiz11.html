@@ -1,0 +1,282 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<head><title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var count_ques = 0;
+var tot_ques=10;
+ans[1]='d';
+ans[2]='d';
+ans[3]='d';
+ans[4]='d';
+ans[5]='b';
+ans[6]='c';
+ans[7]='a';
+ans[8]='b';
+ans[9]='b';
+ans[10]='c';
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                        done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+						count_ques++;
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+					   count_ques++;
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if(count_ques < tot_ques)
+			{
+			alert("Please solve all questions!");
+			}
+        else if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.');
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+			<li ><div align = "left"><a href="../Dreamweaver/index.html"><img src = "../Dreamweaver/images/index/home.jpg" height = "110" width = "90" alt ="home"></a></div></li>
+			<li class="current_page_item">
+			  <div align="center" ><a href= "../Dreamweaver/list.html"><img src = "../Dreamweaver/images/index/experiment.jpg" height = "110" width = "105" alt ="experiments"></a></div>
+			</li>
+            <li >
+			  <div align="center"><a href="../Dreamweaver/equip.html"><img src = "../Dreamweaver/images/index/equipments.jpg" height = "110" width = "105" alt ="basic equipments"></a></div>
+			</li>
+		  <li>
+		    <div align="center"><a href="../Dreamweaver/measurement.html"><img src = "../Dreamweaver/images/index/measurement.jpg" height = "110" width = 105" alt ="measurement"></a></div>
+		  </li>
+		  <li><div align="center"><a href="../Dreamweaver/char.html"><img src = "../Dreamweaver/images/index/characteristics.jpg" height = "110" width = "105" alt ="characteristics"></a></div>
+		  </li>
+
+		<li><div align="center"><a href="../Dreamweaver/safety.html"><img src = "../Dreamweaver/images/index/safety.jpg" height = "110" width = "105" alt ="lab safety"></a></div></li>
+			<li>
+			  <div align="center"><a href="../Dreamweaver/feedback.html"><img src = "../Dreamweaver/images/index/feedback1.jpg" height = "110" width = "105" alt ="feedback"></a></div>
+          </li>
+              <li>
+			  <div align="center"><a href="../Dreamweaver/lab.html"><img src = "../Dreamweaver/images/index/powerlab.jpg" height = "110" width = "105" alt ="DEI powerlab"></a></div>
+              </li>
+			  
+		</ul>
+
+</div><br><br>	
+
+<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	        <h2 class="title">QUIZ - 11</h2>
+			<BR>
+  <BR>         
+<P>
+<div class="nob">
+<form>
+<ol class="boldlist"><li>What is the purpose of back up protection?</li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>
+  To increase the speed
+<br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>
+To increase the reach
+
+<br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>
+To leave no blind spot
+<br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>
+To guard against failure of primary<br>
+<br>
+</ul>
+
+
+<li>What is the actuating quantity for the relays?
+ </li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>
+  Magnitude
+<br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>
+Frequency<br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>
+Phase angle<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>
+All of these<br><br></ul>
+
+
+<li>The Induction Motor failures are mainly due to:</li>
+<p>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>
+  Electrical faults<br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>
+Mechanical stresses<br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>
+Environmental conditions
+<br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>
+All of these<br>
+<br></ul>
+
+
+<li>What are the protections in starter of 3-phase induction motor:</li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>
+  Limiting starting current<br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>
+Overload protection
+<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>
+No-voltage protection
+<br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>
+All above<br><br></ul>
+
+
+<li>Name the protection used for induction motor from overload, single phasing, locked rotor and earth fault:</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>
+  fuses
+<br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>
+numerical protection<br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>
+Protection in starter<br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>
+None of these<br><br></ul>
+
+
+<li> In textile machines, to avoid breaking of threads, soft starters are used. The commonly used method in soft starter is :</li>
+<ul>
+  <p>
+    <input type=radio value='a' onClick='Engine(6, this.value)'>
+    Direct online method<br>
+  <input type=radio value='b' onClick='Engine(6, this.value)'>
+  Star-delta method<br>
+  <input type=radio value='c' onClick='Engine(6, this.value)'>
+  Thyristor voltage controller method<br>
+  <input type=radio value='d' onClick='Engine(6, this.value)'>
+  Thyristor current controller method<br>
+  <br>
+   </p>
+</ul>
+
+
+<li> Torque of an induction motor can sometimes be given in synchronous-watt. One synchronous-watt is equal to:  </li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>
+60 / (2 *pi* Ns) N-m<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>
+(2 *pi* Ns) / 60 N-m <br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>
+120 / (2 *pi* Ns) N-m <br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>
+(2 *pi* Ns) / 120 N-m<br>
+<br>
+</ul>
+
+
+<li> The air gap flux of induction motor does not contain:</sli>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>
+  2nd harmonics<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>
+3rd harmonics<br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>
+5th harmonics<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>
+7th harmonics<br>
+<br>
+</ul>
+
+
+<li>L&T MPR 300 protection relay used for induction motor protection is an :</li>
+<ul>
+  <p>
+    <input type=radio value='a' onClick='Engine(9, this.value)'>
+    Analog electronic relay<br>
+  <input type=radio value='b' onClick='Engine(9, this.value)'>
+  Digital relay<br>
+  <input type=radio value='c' onClick='Engine(9, this.value)'>
+  Both (a) and (b)<br>
+  <input type=radio value='d' onClick='Engine(9, this.value)'>
+  none of the above</p>
+<br>
+</ul>
+
+
+<li> MPR300 protection relay is used for :</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>
+  Single phase induction motors
+<br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>
+Fractional hp induction motors
+<br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>
+3-phase indution motors upto 85 hp rating
+<br>
+<input type=radio value='d' onClick='Engine(10, this.value)'>
+3-phase induction motors above 85 hp rating
+<br><br></ul>
+</ol>
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+    
+
+            </P></div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+    
+<div id="sidebar">
+          
+		<ul class="extra-list">
+			<li><a href="../Dreamweaver/objective11.html">Objective</a></li>
+			<li><a href="../Dreamweaver/equip11.html">Equipments</a></li>
+			<li><a href="../Dreamweaver/connection11.html">Connection Diagram</a></li>
+			<li><a href="../Dreamweaver/proce11.html">Theory And Procedure</a></li>
+			<li><a href="../Dreamweaver/observ11.html"> Observation</a></li>
+			<li><a href="../Dreamweaver/sim11.html">Simulation</a></li>
+			<li><a href="../Dreamweaver/video11.html">Videos</a></li>
+            <li><a href="../Dreamweaver/quiz11.html">Quiz</a></li>
+	
+
+</ul></div>
+		<!-- end #sidebar -->
+              
+           </div>
+           </div>
+           </div>
+
+</body>
+</html>

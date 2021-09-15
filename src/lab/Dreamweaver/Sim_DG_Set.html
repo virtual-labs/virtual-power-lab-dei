@@ -19,6 +19,18 @@ body {
 
 <script type="text/javascript">
 
+var prev_speedw = "";
+var previa = "";
+var prev_freq = "";
+var prev_valg = "";
+var prev_cumerr1 = "";
+var prev_v1 = "";
+var prev_Rf1 = "";
+var prev_Ra1 = "";
+var prev_Rfg1 = "";
+
+var count = 0;
+
 function DCmotorModel () {
 
 Ra=1.0; Rf=150; Lf=0.01; La=0.1;c=10;
@@ -40,7 +52,7 @@ if(v1=="")
 	}
 else if(v1 < -25 || v1 > 25)
 	{
-	alert("'Unrealistic value' Outside range");
+	alert("'Unrealistic value of v' Outside range");
 	document.the_form.valv.value();
 	return false;
 	}
@@ -52,7 +64,7 @@ if(Rf1=="")
 	}
 else if(Rf1 < 0 || Rf1 > 30)
 	{
-	alert("'Unrealistic value' Outside range");
+	alert("'Unrealistic value of Rf' Outside range");
 	document.the_form.varRf.value();
 	return false;
 	}
@@ -64,7 +76,7 @@ if(Ra1=="")
 	}
 else if(Ra1 < 0 || Ra1 > 20)
 	{
-	alert("'Unrealistic value' Outside range");
+	alert("'Unrealistic value of Ra' Outside range");
 	document.the_form.varRa.value();
 	return false;
 	}
@@ -76,11 +88,95 @@ if(Rfg1=="")
 	}
 else if(Rfg1 < 0 || Rfg1 > 30)
 	{
-	alert("'Unrealistic value' Outside range");
+	alert("'Unrealistic value of Rf of generator' Outside range");
 	document.the_form.varRfg.value();
 	return false;
 	}
 else{
+
+  v1 = Number(v1);
+  Rf1 = Number(Rf1);
+  Ra1 = Number(Ra1);
+  Rfg1 = Number(Rfg1);
+
+  if(v1 == "") {
+     v1 = 0;
+    }
+  if(Rf1 =="") {
+     Rf1 = 0;
+    }
+  if(Ra1 ==""){
+     Ra1 = 0;
+    }
+  if(Rfg1 =="") {
+     Rfg1 = 0;
+    }
+
+ if(count > 0){
+    if(prev_v1 > v1){
+ 
+       document.getElementById("placeherev1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_v1 == v1){
+
+       document.getElementById("placeherev1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_v1 < v1){
+       
+       document.getElementById("placeherev1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+
+ if(prev_Rf1 > Rf1){
+ 
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_Rf1 == Rf1){
+
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_Rf1 < Rf1){
+       
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+
+ if(prev_Ra1 > Ra1){
+ 
+       document.getElementById("placehereRa1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_Ra1 == Ra1){
+
+       document.getElementById("placehereRa1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_Ra1 < Ra1){
+       
+       document.getElementById("placehereRa1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+if(prev_Rfg1 > Rfg1){
+ 
+       document.getElementById("placehereRfg1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_Rfg1 == Rfg1){
+
+       document.getElementById("placehereRfg1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_Rfg1 < Rfg1){
+       
+       document.getElementById("placehereRfg1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+   }	
+  prev_v1 = v1;
+  prev_Rf1 = Rf1;
+  prev_Ra1 = Ra1;
+  prev_Rfg1 = Rfg1;
+
 var v = v - (- v1);
 var Rf=Rf- (-Rf1);
 var Ra=Ra- (-Ra1);	
@@ -101,11 +197,124 @@ var    ferr=50-f;
 var    cumerr=Math.abs(verr) + Math.abs(ferr);
 
 }
-document.the_form.curria.value = (Math.round(ia*100)/100);
-document.the_form.speedw.value = (Math.round(w * 600/6.363*100)/100);
-document.the_form.freq.value = (Math.round(f*100)/100);
-document.the_form.valvg.value = (Math.round(vg*100)/100);
-document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
+
+//calculation for current ia.
+
+ var curria = (Math.round(ia*100)/100);
+ document.the_form.curria.value = curria;
+
+ if(count > 0){
+    if(previa > curria){
+ 
+       document.getElementById("placeherec").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(previa == curria){
+
+       document.getElementById("placeherec").src = "../Dreamweaver/images/neutral_out.jpg";
+
+    }
+    else if (previa < curria){
+       
+       document.getElementById("placeherec").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+  previa = curria;
+
+//calculation for speedw.
+
+  var speedw = (Math.round(w * 600/6.363*100)/100);
+  document.the_form.speedw.value = speedw;
+
+  if(count > 0){
+    if(prev_speedw > speedw){  
+
+      document.getElementById("placeheres").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_speedw == speedw){
+    
+      document.getElementById("placeheres").src = "../Dreamweaver/images/neutral_out.jpg";
+    }
+    else if (prev_speedw < speedw){
+      
+      document.getElementById("placeheres").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+ prev_speedw = speedw;
+
+//calculation for frequency.
+
+ var freq = (Math.round(f*100)/100);
+ document.the_form.freq.value = freq ;
+
+ if(count > 0){
+    if(prev_freq > freq){
+ 
+       document.getElementById("placeheref").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_freq == freq){
+
+       document.getElementById("placeheref").src = "../Dreamweaver/images/neutral_out.jpg";
+
+    }
+    else if (prev_freq < freq){
+       
+       document.getElementById("placeheref").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+  prev_freq = freq;
+
+//calculation for voltage.
+
+ var valg = (Math.round(vg*100)/100);
+ document.the_form.valvg.value = valg;
+
+ if(count > 0){
+    if(prev_valg > valg){
+ 
+       document.getElementById("placeherev").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_valg == valg){
+
+       document.getElementById("placeherev").src = "../Dreamweaver/images/neutral_out.jpg";
+
+    }
+    else if (prev_valg < valg){
+       
+       document.getElementById("placeherev").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+  prev_valg = valg;
+
+//calculation for error.
+
+ var cumerr1 = (Math.round(cumerr*100)/100);
+ document.the_form.cumerr1.value = cumerr1;
+
+ if(count > 0){
+    if(prev_cumerr1 > cumerr1){
+ 
+       document.getElementById("placeheree").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_cumerr1 == cumerr1){
+
+       document.getElementById("placeheree").src = "../Dreamweaver/images/neutral_out.jpg";
+
+    }
+    else if (prev_cumerr1 < cumerr1){
+       
+       document.getElementById("placeheree").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+  prev_cumerr1 = cumerr1;
+
+  count = count + 1;
+}
+
 }
 
     function timeimgs(numb)
@@ -119,15 +328,15 @@ document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
     {
       dcmotor1 = new Image();
 
-      dcmotor1.src = "r.GIF"
+      dcmotor1 = "r.GIF";
 
       dcmotor2 = new Image();
 
-      dcmotor2.src = "g.GIF";
+      dcmotor2 = "g.GIF";
 
       dcmotor3 = new Image();
 
-      dcmotor3.src = "y.GIF";
+      dcmotor3 = "y.GIF";
     }
     delay=800; 
     thetimer = setTimeout("imgturn('" +numb+ "')", delay);
@@ -139,15 +348,15 @@ document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
     {
       dcmotor1 = new Image();
 
-      dcmotor1.src = "r1.GIF"
+      dcmotor1 = "r1.GIF";
 
       dcmotor2 = new Image();
 
-      dcmotor2.src = "g1.GIF";
+      dcmotor2 = "g1.GIF";
 
       dcmotor3 = new Image();
 
-      dcmotor3.src = "y1.GIF";
+      dcmotor3 = "y1.GIF";
     }
     thetimer = setTimeout("imgturn('" +numb+ "')", delay);
     }  
@@ -159,17 +368,18 @@ document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
       {
         if (numb == "3")
         {
-          document["dcmotor"].src = eval("dcmotor3.src");
+          document.getElementById("placeheredc").src = eval("dcmotor3");
           timeimgs('1');
         }
         else
         {
-          document["dcmotor"].src = eval("dcmotor" + numb + ".src");
+alert(eval("dcmotor" + numb));
+          document.getElementById("placeheredc").src = eval("dcmotor" + numb);
           timeimgs(numb = ++numb);
         }
       }
     }
-	}
+	
 </script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -177,55 +387,64 @@ document.the_form.cumerr1.value = (Math.round(cumerr*100)/100);
 
 <body>
 <h1><font color="#0076EC"><center>Simulation of Motor-Generator Set</center></font></h1>
-<form name="the_form">
+<form name="the_form"> <img src="images/exp1/alternator.jpg" width=400 height=400 align ="right"/>
 <h2>
 <font color="#0076EC">INPUTS</font><br></h2>
-<div id="sim">Motor V<sub>m</sub> = 230V + Variation (&Delta;V<sub>m</sub>)
-  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="valv"> &plusmn;25V 
- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; External R<sub>f</sub> of Motor = 160&Omega; + Variation (&Delta;R<sub>f</sub>)
- <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRf" /> (0-30 &Omega;)
+
+<div id="sim">Motor V<sub>m</sub>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 230V + Variation (&Delta;V<sub>m</sub>)
+  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="valv"> (-25 to 25V) <img id = "placeherev1" width = "50" height = "50" align = "top"/><br><br>
+ 
+External R<sub>f</sub> of Motor = 160&Omega; + Variation (&Delta;R<sub>f</sub>)
+ <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRf" /> (0-30 &Omega;) <img id = "placehereRf1" width = "50" height = "50" align = "top"/>
 <div id="sim2"></div>
 </div>
 <br />
+
 <form name="the_form">
 <form name="the_form">
-<div id="sim">External R<sub>a</sub> of Motor = 1&Omega; + Variation (&Delta;R<sub>a </sub>)
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRa"> (0-20 &Omega;)
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-R<sub>fg</sub> of Generators = 160&Omega; + Variation (&Delta;R<sub>fg</sub>): 
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRfg" /> (0-30 &Omega;)
+
+<div id="sim">External R<sub>a</sub> of Motor = 1&Omega; + Variation (&Delta;R<sub>a </sub>)&nbsp;&nbsp;
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRa"> (0-20 &Omega;) <img id = "placehereRa1" width = "50" height = "50" align = "top"/> <br><br>
+
+R<sub>fg</sub> of Generators&nbsp;&nbsp;&nbsp;&nbsp; = 160&Omega; + Variation (&Delta;R<sub>fg</sub>): 
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRfg" /> (0-30 &Omega;) <img id = "placehereRfg1" width = "50" height = "50" align = "top"/>
+
 <form name="the_form">
-  <div id="sim3"></div>
-  <center>
-    <img src="images/exp1/alternator.jpg" width=250 height=180/>
-  </center>
+  <div id="sim3"></div> 
+
   <h2> <font color="#0076EC">OUTPUTS</font><br />
   </h2>
-  <div id="sim3">Motor Speed(rpm) :
-    <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="speedw" />
- &nbsp; Motor Current(A):    
- <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="curria" />
- &nbsp; Generaotr Frequency(Hz):
- <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="freq" />
+
+  <div id="sim3">Motor Speed(rpm)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+ <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="speedw" /> <img id = "placeheres" width = "50" height = "50" align = "top"/>
+<br><br>
+
+Motor Current(A))&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="curria" /> <img id = "placeherec" width = "50" height = "50" align = "top"/>
+ <br><br>
+
+Generator Frequency(Hz)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="freq" /> <img id = "placeheref" width = "50" height = "50" align = "top"/>
   </div>
   <br />
-  <div id="sim3"></div>
-  <div id="sim3">Generator Voltage(V):
-    <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="valvg" />
-    &nbsp;
+  
+<div id="sim3"></div>
+  <div id="sim3">Generator Voltage(V)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:
+    <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="valvg" /> <img id = "placeherev" width = "50" height = "50" align = "top"/>
+<br><br>
+
 Total voltage and frequency error :
-<input type = "text"  style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="cumerr1" />
+<input type = "text"  style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" name="cumerr1" /> <img id = "placeheree" width = "50" height = "50" align = "top"/>
   </div>
+
   <ul>
     <a href="#" onclick ="DCmotorModel (); timeimgs('1') ; return false;">
-      <h1><font color="#0076EC">Calculate Motor Speed and Current</font>
+      <h1><font color="#0076EC">Calculate Motor Speed and Current, Generator Frequency and Voltage</font>
       </h1>
     </a>
-</ul>
+</ul><br><br>
   <h2><font color="#0076EC">
-    <center>
+    <center><u>
       Synchronisation of M-G set with infinite bus system
-    </center>
+    </u></center>
   </font></h2>
   <br />
   <div id="sim3">If error is more bulb glow & rotates faster and switches can not be closed <br />
@@ -233,8 +452,8 @@ Total voltage and frequency error :
   <br />
   <br />
   <center>
-    <img src="a.gif" name="dcmotor" border= "2px" width="300" height="200" alt="dcmotor" />
-  </center>
+<img src="a.gif" id ="placeheredc" name="dcmotor" border= "2px" width="300" height="200" alt="dcmotor" /> 
+   </center>
 </form>
 </div>
 <br><br>

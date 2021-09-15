@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Simulation 11</title>
+    <link rel="stylesheet" type="text/css" href="style.css"></link>
+    <link rel="stylesheet" href="bootstrap.css"></link>
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="Block">
+        <div class="row">
+            <div class="col-md-2">
+                <h1>Choose Fault</h1>
+                <div class="Fault">
+                    <ul style="list-style:none">
+                        <li><button id="button3" onclick="imachange3()">No-Fault</button></li>
+                        <li><button id="button1" onclick="imachange1()">Line-Line</button></li>
+                        <li><button id="button2" onclick="imachange2()">Line-Ground</button></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="imabox">
+                    <img id="image1" src="Nofault.png"></img>
+                </div>
+                <div class="imabox">
+                    <img id="image2" src="numerical.png"></img>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

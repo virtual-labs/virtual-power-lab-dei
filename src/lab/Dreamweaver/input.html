@@ -20,6 +20,15 @@ body {
 }
 </style>
 <script type="text/javascript">
+var prev_speedw = "";
+var count = 0;
+var previa = "";
+var prev_v1 = "";
+var prev_Rf1 = "";
+var prev_Ra1 = "";
+
+var ia= "";
+var w = "";
 
 function DCmotorModel () {
 
@@ -30,7 +39,6 @@ fc=0.01; ia=0; w=0; dt=0.0001;v=220;
 var v1=document.the_form.valv.value;
 var Rf1=document.the_form.varRf.value;
 var Ra1=document.the_form.varRa.value;
-
 if(v1=="")
 	   {
 		alert("Please enter Terminal Voltage variation (Vr)");
@@ -43,6 +51,7 @@ else if(v1 < -50 || v1 > 50)
 		document.the_form.valv.focus();
 		return false;
 	    }
+
 else if(Rf1=="")
 	   {
 		alert("Please enter Value of Rf");
@@ -67,22 +76,135 @@ else if(Ra1 < 0 || Ra1 > 1)
 		document.the_form.varRa.focus();
 		return false;
 	    }		
-else{		
+else{	
+  v1 = Number(v1);
+  Rf1 = Number(Rf1);
+  Ra1 = Number(Ra1);
+  if(v1 == "") {
+     v1 = 0;
+    }
+  if(Rf1 =="") {
+     Rf1 = 0;
+    }
+  if(Ra1 ==""){
+     Ra1 = 0;
+    }
+
+  if(count > 0){
+    if(prev_v1 > v1){
+ 
+       document.getElementById("placeherev1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_v1 == v1){
+
+       document.getElementById("placeherev1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_v1 < v1){
+       
+       document.getElementById("placeherev1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+
+ if(prev_Rf1 > Rf1){
+ 
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_Rf1 == Rf1){
+
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_Rf1 < Rf1){
+       
+       document.getElementById("placehereRf1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+
+ if(prev_Ra1 > Ra1){
+ 
+       document.getElementById("placehereRa1").src = "../Dreamweaver/images/decrease_in.jpg";
+    }
+    else if(prev_Ra1 == Ra1){
+
+       document.getElementById("placehereRa1").src = "../Dreamweaver/images/neutral_in.jpg";
+
+    }
+    else if (prev_Ra1 < Ra1){
+       
+       document.getElementById("placehereRa1").src = "../Dreamweaver/images/increase_in.jpg";
+
+    }
+   }	
+  prev_v1 = v1;
+  prev_Rf1 = Rf1;
+  prev_Ra1 = Ra1;
+
+	
  v = v - (- v1);
  Rf=Rf- (-Rf1);
  Ra=Ra- (-Ra1);	
 
-for (i=0; i<10000; i++) {
-var    dfc = ( v - (Rf * fc)) / Lf;
-var    dia = ( v - (c * fc * w) - (Ra* ia)) / La;
-var    dw= ( (c* fc * ia) - T - (B * w)) / x1;
-var    fc = fc + dt * dfc;
-var    ia = ia + dt * dia;
-var    w = w + dt * dw;
+ for (i=0; i<10000; i++) {
+ var    dfc = ( v - (Rf * fc)) / Lf;
+ var    dia = ( v - (c * fc * w) - (Ra* ia)) / La;
+ var    dw= ( (c* fc * ia) - T - (B * w)) / x1;
+ var    fc = fc + dt * dfc;
+	
+ ia = ia + dt * dia;
+ w = w + dt * dw;
+
+ }
+
+//calculation for current ia.
+
+ var curria = (Math.round(ia*100)/100);
+ document.the_form.curria.value = curria;
+
+ if(count > 0){
+    if(previa > curria){
+ 
+       document.getElementById("placeherec").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(previa == curria){
+
+       document.getElementById("placeherec").src = "../Dreamweaver/images/neutral_out.jpg";
+
+    }
+    else if (previa < curria){
+       
+       document.getElementById("placeherec").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+  previa = curria;
+
+//calculation for speedw.
+
+  var speedw = (Math.round(w * 600/6.363*100)/100);
+  document.the_form.speedw.value = speedw;
+
+  if(count > 0){
+    if(prev_speedw > speedw){  
+
+      document.getElementById("placeheres").src = "../Dreamweaver/images/decrease_out.jpg";
+    }
+    else if(prev_speedw == speedw){
+    
+      document.getElementById("placeheres").src = "../Dreamweaver/images/neutral_out.jpg";
+    }
+    else if (prev_speedw < speedw){
+      
+      document.getElementById("placeheres").src = "../Dreamweaver/images/increase_out.jpg";
+
+    }
+  }
+ prev_speedw = speedw;
+ count = count + 1;
+
+ }
 }
-document.the_form.curria.value = (Math.round(ia*100)/100);
-document.the_form.speedw.value = (Math.round(w * 600/6.363*100)/100);
-}}
+
 </script>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 </head>
@@ -94,22 +216,30 @@ document.the_form.speedw.value = (Math.round(w * 600/6.363*100)/100);
 <h2 class="color" >
 INPUTS<br></h2>
 <div id="sim"> Terminal Voltage = 230V + Variation
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="valv"> &plusmn;50V</div><br><br>
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="valv"> (-50 to 50V) <img id = "placeherev1" width = "50" height = "50" align = "top"/></div><br><br>
+
 <form name="the_form">
 <div id="sim">Field Resistance R<sub>f</sub> = 160&Omega; + Variation (&Delta;R<sub>f</sub>)
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRf"> (0-20&Omega;)</div><br><br>
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRf"> (0-20&Omega;) <img id = "placehereRf1" width = "50" height = "50" align = "top"/></div><br><br>
 <form name="the_form">
 <div id="sim">Armature Resistance R<sub>a</sub> = 1&Omega; + Variation (&Delta;R<sub>a</sub>)
-  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRa"> (0-1&Omega;)</div>
-<h2 class="color">
-OUTPUTS<br></h2>
-<div id="sim">Speed w(rpm):  
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6" name="speedw"></div><br>
-<div id="sim">Current I<sub>a</sub>(A):  
-<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6" name="curria"><br></div>
+  <input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="5" maxlength="4" name="varRa"> (0-1&Omega;) <img id = "placehereRa1" width = "50" height = "50" align = "top"/></div>
 
-<a href="#" onClick ="DCmotorModel (); return false;"><br><br><font color="#0076EC"><ul><h1>
-  Calculate Motor Speed and Current</h1> </ul></a>
+<h2 class="color">OUTPUTS<br></h2>
+
+<div id="sim">Speed w(rpm): 
+  
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6" name="speedw"> <img id = "placeheres" width = "50" height = "50" align = "top"/>
+</div><br><br>
+
+<div id="sim">Current I<sub>a</sub>(A):
+ 
+<input type = "text" style="height:40px;font-size:20pt; overflow:hidden;" size="10" maxlength="4" lineLength="6" name="curria"> <img id = "placeherec" width = "50" height = "50" align = "top"/></div><br><br>
+
+<a href="#" onClick ="DCmotorModel(); return false;"><br><br> <ul><h1>  Calculate Motor Speed and current</h1> </ul></a><br><br>
+
+
+
 </form>
 </form>
 </form>

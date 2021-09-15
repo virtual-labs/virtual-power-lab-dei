@@ -1,0 +1,283 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html >
+<head><title>Virtual Labs - DEI</title>
+<link href="../Dreamweaver/style.css" rel="stylesheet" type="text/css" media="screen" />
+<script language ='JavaScript'>
+<!-- hide
+var ans = new Array;
+var done = new Array;
+var score = 0;
+var count_ques = 0;
+var tot_ques=10;
+ans[1]='a';
+ans[2]='c';
+ans[3]='b';
+ans[4]='a';
+ans[5]='b';
+ans[6]='d';
+ans[7]='b';
+ans[8]='c';
+ans[9]='d';
+ans[10]='c';
+function Engine(question, answer) {
+        if (answer != ans[question]) {
+                if (!done[question]) {
+                        done[question] = -1;
+                        alert('Wrong!    The right answer is    ' + ans[question]);
+						count_ques++;
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+       else {
+               if (!done[question]) {
+                       done[question] = -1;
+                       score++;
+                       alert('Correct!     Great!' );
+					   count_ques++;
+                       }
+               else {
+                       alert('You have already answered that!');
+                       }
+               }
+}
+function Test_result() {
+        if(count_ques < tot_ques)
+			{
+			alert("Please solve all questions!");
+			}
+        else if (score == tot_ques) {
+                alert('Oh!  You got full points!');
+                }
+        else {
+                alert('You got ' + score + ' point(s) out of ' + tot_ques + ' questions.');
+                }
+}
+//-->
+</script>
+</head>
+<body>
+<div id="wrapper">
+<div id="header">
+		<div id="logo">
+				 <br> 
+			 <div class="thimage" > <img src="REIbuilding.png" alt="" width="165" height="90" /><img src="../Dreamweaver/main.bmp" alt="" width="165" height="90" /><img src="../Dreamweaver/images69.jpg" alt="" width="220" height="90" /><br> 
+	      </div><h1>Virtual Power Laboratory-D.E.I.</h1></div></div> <div id="menu">
+		<ul>
+			<li ><div align = "left"><a href="../Dreamweaver/index.html"><img src = "../Dreamweaver/images/index/home.jpg" height = "110" width = "90" alt ="home"></a></div></li>
+			<li class="current_page_item">
+			  <div align="center" ><a href= "../Dreamweaver/list.html"><img src = "../Dreamweaver/images/index/experiment.jpg" height = "110" width = "105" alt ="experiments"></a></div>
+			</li>
+            <li >
+			  <div align="center"><a href="../Dreamweaver/equip.html"><img src = "../Dreamweaver/images/index/equipments.jpg" height = "110" width = "105" alt ="basic equipments"></a></div>
+			</li>
+		  <li>
+		    <div align="center"><a href="../Dreamweaver/measurement.html"><img src = "../Dreamweaver/images/index/measurement.jpg" height = "110" width = 105" alt ="measurement"></a></div>
+		  </li>
+		  <li><div align="center"><a href="../Dreamweaver/char.html"><img src = "../Dreamweaver/images/index/characteristics.jpg" height = "110" width = "105" alt ="characteristics"></a></div>
+		  </li>
+
+		<li><div align="center"><a href="../Dreamweaver/safety.html"><img src = "../Dreamweaver/images/index/safety.jpg" height = "110" width = "105" alt ="lab safety"></a></div></li>
+			<li>
+			  <div align="center"><a href="../Dreamweaver/feedback.html"><img src = "../Dreamweaver/images/index/feedback1.jpg" height = "110" width = "105" alt ="feedback"></a></div>
+          </li>
+              <li>
+			  <div align="center"><a href="../Dreamweaver/lab.html"><img src = "../Dreamweaver/images/index/powerlab.jpg" height = "110" width = "105" alt ="DEI powerlab"></a></div>
+              </li>
+			  
+		</ul>
+
+</div><br><br>	
+
+<div id="page">
+	<div id="page-bgtop">
+	<div id="page-bgbtm">
+	  <div id="content">
+	    <div class="post">
+	      <div class="post-bgtop">
+	        <div class="post-bgbtm">
+	        <h2 class="title">QUIZ - Differntial Protection of Transformer</h2>
+			<BR>
+  <BR>         
+<P>
+<div class="nob">
+<form>
+<ol class="boldlist"><li>Differential protection should be provided in the transformers whose rating: </li>
+<ul><input type=radio value='a' onClick='Engine(1, this.value)'>
+  Above 5 MVA
+<br>
+<input type=radio value='b' onClick='Engine(1, this.value)'>
+Below 5MVA
+<br>
+<input type=radio value='c' onClick='Engine(1, this.value)'>
+Above 50 MVA
+<br>
+<input type=radio value='d' onClick='Engine(1, this.value)'>
+Below 50 MVA<br>
+<br>
+</ul>
+
+
+<li>The differential protection of transformer does not cover the following fault: </li>
+<ul><input type=radio value='a' onClick='Engine(2, this.value)'>
+  Winding to ground fault
+<br>
+<input type=radio value='b' onClick='Engine(2, this.value)'>
+Winding to winding faults<br>
+<input type=radio value='c' onClick='Engine(2, this.value)'>
+Inter turn fault in any winding<br>
+<input type=radio value='d' onClick='Engine(2, this.value)'>
+short circuit faults at transformer bushing<br><br></ul>
+
+
+<li>Which type of connection is employed for current transformers for the protection of Delta- Star connected 3-phase transformer:</li>
+<p>
+<ul><input type=radio value='a' onClick='Engine(3, this.value)'>
+  Detla-Star<br>
+<input type=radio value='b' onClick='Engine(3, this.value)'>
+Star-Delta<br>
+<input type=radio value='c' onClick='Engine(3, this.value)'>
+Delta-Delta
+<br>
+<input type=radio value='d' onClick='Engine(3, this.value)'>
+Star-Star<br>
+<br></ul>
+
+
+<li>Which Differential protection principle is used in the protection of transformer:</li>
+<ul><input type=radio value='a' onClick='Engine(4, this.value)'>
+  Current difference<br>
+<input type=radio value='b' onClick='Engine(4, this.value)'>
+Voltage difference
+<br>
+<input type=radio value='c' onClick='Engine(4, this.value)'>
+Power difference
+<br>
+<input type=radio value='d' onClick='Engine(4, this.value)'>
+power factor difference<br><br></ul>
+
+
+<li>In differntial protection of transformer the CTs on both side of transformer are:</li>
+<ul><input type=radio value='a' onClick='Engine(5, this.value)'>
+Identically same <br>
+<input type=radio value='b' onClick='Engine(5, this.value)'>
+Their turns ratio has inverse relation <br>
+<input type=radio value='c' onClick='Engine(5, this.value)'>
+Their turns ratio has no relationship<br>
+<input type=radio value='d' onClick='Engine(5, this.value)'>
+None of the above<br><br></ul>
+
+
+<li> A differntial protection protect transformer from the following fault-
+
+    
+    </li>
+<ul>
+  <p>
+    <input type=radio value='a' onClick='Engine(6, this.value)'>
+    Over current due to overloads and external short circuits,
+    <br>
+  <input type=radio value='b' onClick='Engine(6, this.value)'>
+  Interturn faults    <br>
+  <input type=radio value='c' onClick='Engine(6, this.value)'>
+  Oil leakage faults <br>
+  <input type=radio value='d' onClick='Engine(6, this.value)'>
+  Incipient internal faults.<br>
+  <br>
+   </p>
+</ul>
+
+
+<li> How does the tap changing effect of transformer can be nullify in differential protection of transformer:  </li>
+<ul><input type=radio value='a' onClick='Engine(7, this.value)'>
+  By changing CT ratios;<br>
+<input type=radio value='b' onClick='Engine(7, this.value)'>
+Using restraining coil <br>
+<input type=radio value='c' onClick='Engine(7, this.value)'>
+Providing tappings in relay coil<br>
+<input type=radio value='d' onClick='Engine(7, this.value)'>
+none of the above<br>
+<br>
+</ul>
+
+
+<li> In pole mounted substation, which protection is used:</li>
+<ul><input type=radio value='a' onClick='Engine(8, this.value)'>
+  differential protection<br>
+<input type=radio value='b' onClick='Engine(8, this.value)'>
+Earth fault protection <br>
+<input type=radio value='c' onClick='Engine(8, this.value)'>
+DO Fuses<br>
+<input type=radio value='d' onClick='Engine(8, this.value)'>
+Buchholz relay <br>
+<br>
+</ul>
+
+
+<li>The differential protection is used for which type of transformer:</li>
+<ul>
+  <p>
+    <input type=radio value='a' onClick='Engine(9, this.value)'>
+    Oil cooled Transformer<br>
+  <input type=radio value='b' onClick='Engine(9, this.value)'>
+  Air cooled Transformer<br>
+  <input type=radio value='c' onClick='Engine(9, this.value)'>
+  SF6 gas cooled Transformer<br>
+  <input type=radio value='d' onClick='Engine(9, this.value)'>
+  All of the above</p>
+<br>
+</ul>
+
+
+<li> In differential protection the relay is connected:</li>
+<ul><input type=radio value='a' onClick='Engine(10, this.value)'>
+  Near Current Transformer
+<br>
+<input type=radio value='b' onClick='Engine(10, this.value)'>
+Near Transformer bushings
+<br>
+<input type=radio value='c' onClick='Engine(10, this.value)'>
+At equipotential point of pilot wire
+<br>
+<input type=radio value='d' onClick='Engine(10, this.value)'>
+Near transformer tank
+<br><br></ul>
+</ol>
+<center>
+<input type=button onClick='Test_result()' value='Final Results'>
+</center>
+</form>
+<hr> 
+    
+
+            </P></div>
+              </div>
+              </div>
+              </div>
+              </div>
+	<!-- end #CONTENT -->
+    
+    
+<div id="sidebar">
+          
+		<ul class="extra-list">
+			<li><a href="../Dreamweaver/objective10.html">Objective</a></li>
+			<li><a href="../Dreamweaver/equip10.html">Equipments</a></li>
+			<li><a href="../Dreamweaver/connection10.html">Connection Diagram</a></li>
+			<li><a href="../Dreamweaver/proce10.html">Theory And Procedure</a></li>
+			<li><a href="../Dreamweaver/observ10.html"> Observation</a></li>
+			<li><a href="../Dreamweaver/sim10.html">Simualtion</a></li>
+			<li><a href="../Dreamweaver/video10.html">Videos</a></li>
+            <li><a href="../Dreamweaver/quiz10.html">Quiz</a></li>
+	
+
+</ul></div>
+		<!-- end #sidebar -->
+              
+           </div>
+           </div>
+           </div>
+
+</body>
+</html>
