@@ -1,24 +1,91 @@
+<!-- This code is Updated by Harsh Pathak (06hpathak@gmail.com) and Aysha (satsangiaysha@gmail.com)in July 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simulation of X₀</title>
+    <style>
+      body {
+        background-color: #fff9ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      canvas {
+        border: 1px solid #000;
+        background-color: #ffffff;
+        margin: 20px auto;
+        display: block;
+      }
+      .controls {
+        margin-top: 10px;
+      }
+      img {
+        display: none; /* hidden since drawn on canvas */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: #cc0000">Determination of X₀</h1>
+    <p><strong>Determination of Zero Sequence Reactance</strong></p>
 
-<html>
-<head>
-<title>
-Simulation of X0
-</title>
-</head>
+    <!-- Hidden image, drawn onto canvas -->
+    <img id="img0" src="x0_2.gif" alt="X₀ Illustration" />
 
-<HR noshade>
-<H1 align=center><font color="#CC0000">Determination of X<sub>0</sub></font></H1>
-<HR noshade>
-<br>
-<p align=center ><strong>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Determination of Zero Sequence Reactance</strong></p>
+    <canvas id="x0canvas" width="600" height="540"></canvas>
 
-<body>
+    <div class="controls">
+      <label for="voSlider">Vo: </label>
+      <input type="range" id="voSlider" min="1" max="11" value="1" step="1" />
+    </div>
 
-<applet code="X0.class" width=540 height=515>
-<param name="img0" value="x0_2.gif">
+    <script>
+      const canvas = document.getElementById("x0canvas");
+      const ctx = canvas.getContext("2d");
+      const voSlider = document.getElementById("voSlider");
+      const img0 = document.getElementById("img0");
 
-</applet>
+      img0.onload = draw;
+      img0.onerror = draw; // proceed even if image missing
 
-</body>
+      function drawSubscriptText(ctx, text, sub, x, y, baseSize, subSize) {
+        ctx.save();
+        ctx.font = `${baseSize}px Arial`;
+        ctx.fillText(text, x, y);
+        const w = ctx.measureText(text).width;
+        ctx.font = `${subSize}px Arial`;
+        ctx.fillText(sub, x + w - 2, y + subSize / 3);
+        ctx.restore();
+      }
 
+      function draw() {
+        const d = voSlider.value;
+        const v0 = d / 2;
+
+        const val = Math.random() / 10 + 1.8;
+        const i0 = 3 * (v0 / val);
+        const x0 = 3 * (v0 / i0);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw background image
+        if (img0.complete) {
+          ctx.drawImage(img0, 20, 60);
+        }
+
+        ctx.font = "bold 14px Arial";
+        ctx.fillStyle = "#000";
+        ctx.fillText(`Vo = ${v0.toFixed(2)}`, 20, 40);
+
+        ctx.fillText(`${i0.toFixed(2)}`, 320, 437);
+        ctx.fillText(`${x0.toFixed(2)}`, 342, 108);
+
+        // Draw subscript labels for more formal presentation if desired
+        // drawSubscriptText(ctx, "I", "0", 300, 460, 14, 10);
+        // drawSubscriptText(ctx, "X", "0", 337, 80, 14, 10);
+      }
+
+      voSlider.addEventListener("input", draw);
+      draw();
+    </script>
+  </body>
 </html>
