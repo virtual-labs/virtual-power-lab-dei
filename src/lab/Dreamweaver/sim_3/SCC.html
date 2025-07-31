@@ -1,26 +1,133 @@
-<?php
-	require_once('auth.php');
-?>
-<html>
-<head>
-<title>
-simulation 3
-</title>
-</head>
+<!-- This code is Updated by Harsh Pathak (06hpathak@gmail.com) and Aysha (satsangiaysha@gmail.com)in July 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Short Circuit Test on Alternator</title>
+    <style>
+      body {
+        background-color: #fff9ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      canvas {
+        border: 1px solid #000;
+        background-color: #ffffff;
+        display: block;
+        margin: 20px auto;
+      }
+      .controls {
+        margin-top: 10px;
+      }
+      img {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: #cc0000">Short Circuit Test on Alternator</h1>
+    <h3>
+      <strong>I<sub>f</sub> vs I<sub>sc</sub> Characteristic</strong>
+    </h3>
 
-<HR noshade>
-<H1 align=center><font color="#CC0000">Short Circuit Test on alternator</font></H1>
-<HR noshade>
-<br>
-<p align=center ><strong><H3>I<sub>f</sub> vs I<sub>sc</sub> Characteristic</H3></strong></p>
+    <img src="alt.JPG" alt="Alternator" align="left" width="200" height="150" />
 
-<body bgcolor="#FFF9FF">
-<img src="alt.JPG" align=left width=200 height=150>
+    <!-- B-H Curve canvas -->
+    <canvas id="sccCanvas" width="550" height="500"></canvas>
 
-<applet code="SCC.class" width=550 height=500>
-<param name="img" value="Current.gif">
-</applet>
+    <div class="controls">
+      <label for="fieldVoltage">Field Voltage (0 - 230 V): </label>
+      <input type="range" id="fieldVoltage" min="0" max="230" value="0" />
+    </div>
 
-</body>
+    <script>
+      const canvas = document.getElementById("sccCanvas");
+      const ctx = canvas.getContext("2d");
+      const fieldVoltageSlider = document.getElementById("fieldVoltage");
 
+      // Load the GIF image (similar to the applet's img parameter)
+      const img = new Image();
+      img.src = "Current.gif"; // Path to the GIF image (update as necessary)
+
+      // Wait until the image is loaded
+      img.onload = function () {
+        draw(); // Initial drawing when the image is loaded
+      };
+
+      // Function to draw subscript text (I_f and I_sc)
+      function drawSubscript(ctx, baseText, subText, x, y) {
+        // Draw the base text (e.g., "I")
+        ctx.save();
+        ctx.font = "bold 12px Arial"; // Main font size for "I"
+        ctx.fillText(baseText, x, y);
+        ctx.restore();
+
+        // Draw the subscript (e.g., "f")
+        ctx.save();
+        ctx.font = "bold 8px Arial"; // Smaller font size for subscript
+        ctx.fillText(subText, x + ctx.measureText(baseText).width - 2, y - 3); // Position the subscript slightly below the base text
+        ctx.restore();
+      }
+
+      // Function to draw everything on the canvas
+      function draw() {
+        // Clear the canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw the loaded image
+        ctx.drawImage(img, 50, 50);
+
+        // Get the field voltage from the slider
+        const d = fieldVoltageSlider.value;
+
+        // Draw rectangles
+        ctx.strokeRect(106, 85, 38, 22);
+        ctx.strokeRect(77, 270, 46, 22);
+
+        // Calculate I_f and I_sc values
+        const vif = (0.01 * d).toFixed(2);
+        const visc = (0.1522 * d).toFixed(2);
+
+        // Draw the values of I_f and I_sc
+        ctx.fillText(vif, 114, 100);
+        ctx.fillText(visc, 89, 285);
+
+        // Draw the axis and the labels
+        ctx.beginPath();
+        ctx.moveTo(350, 100);
+        ctx.lineTo(350, 250); // Vertical line
+        ctx.moveTo(350, 250);
+        ctx.lineTo(500, 250); // Horizontal line
+        ctx.stroke();
+
+        // Draw I_f and I_sc with subscript
+        ctx.fillText("I_f ", 480, 263); // For I_f
+        ctx.fillText("I_sc", 330, 110); // For I_sc
+
+        // Draw rectangle around the graph area
+        ctx.strokeRect(325, 70, 200, 200);
+
+        // Calculate the dynamic values of I_f and I_sc
+        const x = d / 10;
+        const y = (d * 35) / 75;
+
+        // Draw the line representing the graph between I_f and I_sc
+        ctx.beginPath();
+        ctx.moveTo(350, 250);
+        ctx.lineTo(350 + 2 * x, 250 - y);
+        ctx.stroke();
+
+        // Add graph title
+        ctx.fillText("Graph between I_f and I_sc", 360, 65);
+        ctx.fillText("I_f", 88, 100);
+        ctx.fillText("I_sc", 95, 304);
+      }
+
+      // Event listener for the slider to adjust the field voltage value
+      fieldVoltageSlider.addEventListener("input", draw);
+
+      // Initial draw call
+      draw();
+    </script>
+  </body>
 </html>
