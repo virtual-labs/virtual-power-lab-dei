@@ -1,25 +1,152 @@
-<?php
-	require_once('auth.php');
-?>
-<html>
-<head>
-<title>
- B-H Curve
-</title>
-</head>
+<!-- This code is Updated by Harsh Pathak (06hpathak@gmail.com) and Aysha (satsangiaysha@gmail.com)in July 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>B-H Curve Simulation</title>
+    <style>
+      body {
+        background-color: #fff9ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      canvas {
+        border: 1px solid #000;
+        background-color: #ffffff;
+        display: block;
+        margin: 20px auto;
+      }
+      .controls {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: #cc0000">Open Circuit Characteristic of Alternator</h1>
+    <h2>B-H Curve</h2>
+    <p>
+      This curve shows the effect of variation in Load current over B-H loop.
+      The load current changes with external resistance. The initial value of
+      resistance is high and BH loop seems as a straight line. When we decrease
+      resistance,the current value increases and as a result the thickness of
+      B-H loop increases.
+    </p>
 
-<HR noshade>
-<H1 align=center><font color="#CC0000">Open Circuit Characteristic of Alternator</font></H1>
-<HR noshade>
-<br>
-<p align=center ><strong><u>B-H Curve</u></strong></p>
-<p align=center > This curve shows the effect of variation in Load current over B-H loop. The load current changes with external resistance. The initial value of resistance is high and  BH loop seems as a straight line. When we decrease resistance,the current value increases and as a result the thickness of B-H loop increases </p>
+    <!-- Display the GIF -->
+    <img src="OCC.GIF" alt="Open Circuit Characteristic (OCC)" align="left" />
 
-<body bgcolor="#FFF9FF">
-<img src="OCC.GIF" align=left>
-<p align=Center>
-<applet align=Center code="OCC.class" width=450 height=425>
-</applet>
-</p>
-</body>
+    <!-- B-H Curve canvas -->
+    <canvas id="bhCanvas" width="400" height="400"></canvas>
+
+    <div class="controls">
+      <label for="resistance">Resistance Control: </label>
+      <input type="range" id="resistance" min="0" max="199" value="200" />
+    </div>
+
+    <script>
+      const canvas = document.getElementById("bhCanvas");
+      const ctx = canvas.getContext("2d");
+      const resistanceSlider = document.getElementById("resistance");
+
+      // Initial variables from original Java applet
+      let x1 = 300,
+        y1 = 110,
+        x2 = 100,
+        y2 = 310;
+      let cx1 = 250,
+        cy1 = 160,
+        cx2 = 150,
+        cy2 = 260;
+
+      // Draw the grid and axes
+      function drawAxes() {
+        ctx.strokeStyle = "#000";
+        ctx.lineWidth = 1;
+        ctx.strokeRect(25, 35, 350, 350);
+
+        // X and Y axes
+        ctx.beginPath();
+        ctx.moveTo(200, 35);
+        ctx.lineTo(200, 385); // Y axis
+        ctx.moveTo(25, 210);
+        ctx.lineTo(375, 210); // X axis
+        ctx.stroke();
+
+        // Grid lines (blue)
+        ctx.strokeStyle = "blue";
+        for (let x = 60; x <= 340; x += 35) {
+          ctx.beginPath();
+          ctx.moveTo(x, 35);
+          ctx.lineTo(x, 385);
+          ctx.stroke();
+        }
+
+        for (let y = 70; y <= 350; y += 35) {
+          ctx.beginPath();
+          ctx.moveTo(25, y);
+          ctx.lineTo(375, y);
+          ctx.stroke();
+        }
+      }
+
+      // Draw the B-H Curve based on resistance slider value
+      function drawCurve(d) {
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 2;
+
+        // Compute the dynamic control points for the curve
+        const cx1l = (d + 1050) / 5;
+        const cy1l = (d + 600) / 5;
+        const cx2l = (500 - d) / 2;
+        const cy2l = (720 - d) / 2;
+
+        // Draw cubic curves
+        const cubic1 = new Path2D();
+        cubic1.moveTo(x1, y1);
+        cubic1.bezierCurveTo(
+          (d + 300) / 2,
+          (d + 120) / 2,
+          (950 - d) / 5,
+          (1500 - d) / 5,
+          x2,
+          y2
+        );
+        ctx.stroke(cubic1);
+
+        const cubic2 = new Path2D();
+        cubic2.moveTo(x1, y1);
+        cubic2.bezierCurveTo(cx1l, cy1l, cx2l, cy2l, x2, y2);
+        ctx.stroke(cubic2);
+
+        // Draw quadratic curve
+        const quad1 = new Path2D();
+        quad1.moveTo(300, 110);
+        quad1.quadraticCurveTo((d + 1050) / 5, (d + 600) / 5, 200, 210);
+        ctx.stroke(quad1);
+      }
+
+      // Render the curve and grid
+      function render() {
+        const d = parseInt(resistanceSlider.value);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        drawAxes();
+
+        if (d === 199) {
+          ctx.strokeStyle = "red";
+          ctx.beginPath();
+          ctx.moveTo(210, 200);
+          ctx.lineTo(190, 220);
+          ctx.stroke();
+        } else {
+          drawCurve(d);
+        }
+      }
+
+      // Event listener for slider input
+      resistanceSlider.addEventListener("input", render);
+
+      // Initial render when the page loads
+      render();
+    </script>
+  </body>
 </html>
