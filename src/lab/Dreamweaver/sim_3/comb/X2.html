@@ -1,23 +1,94 @@
-<html>
-<head>
-<title>
-Simulation of X2
-</title>
-</head>
+<!-- This code is Updated by Harsh Pathak (06hpathak@gmail.com) and Aysha (satsangiaysha@gmail.com)in July 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Simulation of X₂</title>
+    <style>
+      body {
+        background-color: #fff9ff;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      canvas {
+        border: 1px solid #000;
+        background-color: #ffffff;
+        margin: 20px auto;
+        display: block;
+      }
+      .controls {
+        margin-top: 10px;
+      }
+      img {
+        display: none; /* hidden since drawn on canvas */
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="color: #cc0000">Determination of X₂</h1>
+    <p><strong>Determination of Negative Sequence Reactance</strong></p>
 
-<HR noshade>
-<H1 align=center><font color="#CC0000">Determination of X<sub>2</sub></font></H1>
-<HR noshade>
-<br>
-<p align=center ><strong> &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Determination of Negative Sequence Reactance</strong></p>
+    <!-- Hidden image, drawn onto canvas -->
+    <img id="img2" src="x2_2.gif" alt="X₂ Illustration" />
 
-<body>
+    <canvas id="x2canvas" width="600" height="540"></canvas>
 
-<applet code="X2.class" width=500 height=515>
-<param name="img2" value="x2_2.gif">
+    <div class="controls">
+      <label for="vfSlider">Vf: </label>
+      <input type="range" id="vfSlider" min="0" max="10" value="0" step="1" />
+    </div>
 
-</applet>
+    <script>
+      const canvas = document.getElementById("x2canvas");
+      const ctx = canvas.getContext("2d");
+      const vfSlider = document.getElementById("vfSlider");
+      const img2 = document.getElementById("img2");
 
-</body>
+      img2.onload = draw;
+      img2.onerror = draw; // proceed even if image missing
 
+      function drawSubscriptText(ctx, text, sub, x, y, baseSize, subSize) {
+        ctx.save();
+        ctx.font = `${baseSize}px Arial`;
+        ctx.fillText(text, x, y);
+        const w = ctx.measureText(text).width;
+        ctx.font = `${subSize}px Arial`;
+        ctx.fillText(sub, x + w - 2, y + subSize / 3);
+        ctx.restore();
+      }
+
+      function draw() {
+        const vf = vfSlider.value;
+
+        // Calculate values
+        const ios = 0.95 * vf;
+        const vos = 4.95 * vf;
+        let x2 = 0;
+
+        // Ensure we're not dividing by zero or invalid value for X₂
+        if (ios !== 0) {
+          x2 = vos / (3 * ios);
+        }
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw background image
+        if (img2.complete) {
+          ctx.drawImage(img2, 45, 5);
+        }
+
+        ctx.font = "bold 14px Arial";
+        ctx.fillStyle = "#000";
+        ctx.fillText(`Vf = ${vf}`, 20, 40);
+
+        // Draw computed values
+        ctx.fillText(`${ios.toFixed(2)}`, 125, 395);
+        ctx.fillText(`${vos.toFixed(2)}`, 230, 432);
+        ctx.fillText(`${x2.toFixed(2)}`, 380, 79);
+      }
+
+      vfSlider.addEventListener("input", draw);
+      draw();
+    </script>
+  </body>
 </html>
