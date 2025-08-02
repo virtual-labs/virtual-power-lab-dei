@@ -1,25 +1,310 @@
+<!-- This code is Updated by Harsh Pathak (06hpathak@gmail.com) and Aysha (satsangiaysha@gmail.com) in July 2025 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Buchholz Relay Simulation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        margin: 0;
+      }
 
-<!doctype html>
-<!--
-The DOCTYPE declaration above will set the browser's rendering engine into
-"Standards Mode". Replacing this declaration with a "Quirks Mode" doctype may
-lead to some differences in layout.
--->
-<html>
-    <head>
-        <meta name='gwt:module' content='in.ac.dei.vLab=in.ac.dei.Exp6'>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Exp6</title>
-    </head>
-    <body>
-	<b style="font-size:1.5em;color:red;margin-left:20px">
-	<u>Procedure</u><br />
-	1. Close valve V<sub>1</sub> and valve V<sub>2</sub><br>
-	2. Close valve V<sub>3</sub><br>
-	3. Observe Reduction in Oil Level in Relay <br>
-	4. If Oil level Reduction > 100 c.cm, then Alarm light blink<br>
-	5. If Oil level Reduction > 300 c.cm, then trip circuit light blink <br>
-        <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1' style="position:absolute;width:0;height:0;border:0"></iframe>
-        <script type="text/javascript"  src="in.ac.dei.Exp6/in.ac.dei.Exp6.nocache.js"></script>
-    </body>
+      .procedure {
+        font-size: 18px;
+        color: red;
+        margin: 20px;
+      }
+
+      .procedure u {
+        color: black;
+      }
+
+      .container {
+        width: 900px;
+        height: 640px;
+        margin: auto;
+        position: relative;
+        background: url("images/back4.png") no-repeat center center;
+        background-size: cover;
+        border: 2px solid gray;
+        padding: 10px;
+      }
+
+      .label {
+        position: absolute;
+        color: red;
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .valve {
+        width: 40px;
+        height: 40px;
+        background-size: cover;
+        position: absolute;
+        cursor: pointer;
+      }
+
+      .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      #alarm {
+        background-color: yellow;
+      }
+
+      #trip {
+        background-color: red;
+      }
+
+      .relay {
+        width: 60px;
+        height: 90px;
+        border: 2px solid green;
+        background-color: white;
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column-reverse;
+      }
+
+      .relay-fill {
+        background-color: blue;
+        width: 100%;
+        transition: height 0.3s;
+      }
+
+      .scale {
+        position: absolute;
+        left: 490px;
+        top: 200px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+
+      .btn {
+        margin: 10px auto;
+        display: block;
+      }
+
+      @keyframes blinkYellow {
+        0%,
+        100% {
+          background-color: yellow;
+        }
+        50% {
+          background-color: white;
+        }
+      }
+
+      @keyframes blinkRed {
+        0%,
+        100% {
+          background-color: red;
+        }
+        50% {
+          background-color: white;
+        }
+      }
+
+      .blink-alarm {
+        animation: blinkYellow 1s infinite;
+      }
+
+      .blink-trip {
+        animation: blinkRed 1s infinite;
+      }
+
+      #status {
+        text-align: center;
+        margin-top: 10px;
+        font-weight: bold;
+        color: #000;
+      }
+
+      /* Pump image */
+      .pump {
+        width: 120px;
+        height: 120px;
+        background-image: url("images/pump.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 447px;
+        top: 588px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="procedure">
+      <u>Procedure</u><br />
+      1. Close valve V<sub>1</sub> and valve V<sub>2</sub><br />
+      2. Close valve V<sub>3</sub><br />
+      3. Observe Reduction in Oil Level in Relay<br />
+      4. If Oil level Reduction &gt; 100 c.cm, then Alarm light blink<br />
+      5. If Oil level Reduction &gt; 300 c.cm, then Trip Circuit light blink
+      (Alarm stays ON)<br />
+    </div>
+
+    <div class="container">
+      <!-- Valves -->
+      <div
+        class="valve"
+        id="valve1"
+        style="
+          top: 110px;
+          left: 230px;
+          background-image: url('images/valveClose.png');
+        "
+      ></div>
+      <div
+        class="valve"
+        id="valve2"
+        style="
+          top: 330px;
+          left: 640px;
+          background-image: url('images/valveClose.png');
+        "
+      ></div>
+      <div
+        class="valve"
+        id="valve3"
+        style="
+          top: 420px;
+          left: 640px;
+          background-image: url('images/valveClose.png');
+        "
+      ></div>
+
+      <!-- Alarm -->
+      <div class="circle" id="alarm" style="top: 325px; left: 135px"></div>
+
+      <!-- Trip -->
+      <div class="circle" id="trip" style="top: 75px; left: 729px"></div>
+
+      <!-- Relay Tank -->
+      <div class="relay" style="top: 200px; left: 420px">
+        <div class="relay-fill" id="relayFill" style="height: 100%"></div>
+      </div>
+
+      <!-- Scale -->
+      <div class="scale">
+        <span>0</span>
+        <span>100</span>
+        <span>200</span>
+        <span>300</span>
+        <span>400</span>
+        <span>500 c.cm</span>
+      </div>
+
+      <!-- Pump -->
+      <div class="pump"></div>
+
+      <!-- Status -->
+      <div id="status">
+        Oil Level Drained: <span id="oilLevel">0</span> c.cm
+      </div>
+      <button class="btn" onclick="resetAll()">Refresh Everything</button>
+    </div>
+
+    <script>
+      let oilLevel = 500;
+      const maxOil = 500;
+      let simulationStarted = false;
+
+      const valve1 = document.getElementById("valve1");
+      const valve2 = document.getElementById("valve2");
+      const valve3 = document.getElementById("valve3");
+      const alarm = document.getElementById("alarm");
+      const trip = document.getElementById("trip");
+      const relayFill = document.getElementById("relayFill");
+      const oilLevelSpan = document.getElementById("oilLevel");
+
+      let interval;
+
+      function toggleValve(valve) {
+        if (valve.dataset.open === "true") {
+          valve.style.backgroundImage = "url('images/valveClose.png')";
+          valve.dataset.open = "false";
+        } else {
+          valve.style.backgroundImage = "url('images/valveOpen.png')";
+          valve.dataset.open = "true";
+        }
+        checkStart();
+      }
+
+      valve1.onclick = () => toggleValve(valve1);
+      valve2.onclick = () => toggleValve(valve2);
+      valve3.onclick = () => toggleValve(valve3);
+
+      [valve1, valve2, valve3].forEach((v) => (v.dataset.open = "false"));
+
+      function checkStart() {
+        if (
+          valve1.dataset.open === "true" &&
+          valve2.dataset.open === "true" &&
+          valve3.dataset.open === "true" &&
+          !simulationStarted
+        ) {
+          simulationStarted = true;
+          startDrain();
+        }
+      }
+
+      function startDrain() {
+        clearInterval(interval);
+        interval = setInterval(() => {
+          if (oilLevel > 0) {
+            oilLevel -= 5;
+            updateDisplay();
+          }
+        }, 300);
+      }
+
+      function updateDisplay() {
+        const relayPercent = (oilLevel / maxOil) * 100;
+        relayFill.style.height = `${relayPercent}%`;
+        oilLevelSpan.textContent = maxOil - oilLevel;
+
+        // Alarm logic
+        if (oilLevel <= 400) {
+          alarm.classList.add("blink-alarm");
+        } else {
+          alarm.classList.remove("blink-alarm");
+        }
+
+        // Trip logic
+        if (oilLevel <= 200) {
+          trip.classList.add("blink-trip");
+        } else {
+          trip.classList.remove("blink-trip");
+        }
+      }
+
+      function resetAll() {
+        oilLevel = 500;
+        simulationStarted = false;
+        relayFill.style.height = "100%";
+        oilLevelSpan.textContent = 0;
+        alarm.classList.remove("blink-alarm");
+        trip.classList.remove("blink-trip");
+
+        [valve1, valve2, valve3].forEach((v) => {
+          v.dataset.open = "false";
+          v.style.backgroundImage = "url('images/valveClose.png')";
+        });
+
+        clearInterval(interval);
+      }
+    </script>
+  </body>
 </html>
