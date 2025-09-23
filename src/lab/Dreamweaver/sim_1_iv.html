@@ -1,0 +1,638 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+    <title>Virtual Labs - DEI</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        MathJax = {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+          }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style type="text/css" media="screen">
+        /* --- Start of Provided DEI CSS Style --- */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #FFF9FF;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: #000000;
+        }
+        .title
+        {
+            text-align:center;
+            text-decoration: underline;
+            font: lighter 3.2em Georgia, "Times New Roman", Times, serif;
+            color: #000;
+        }
+
+        h1, h2, h3 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+            color: #000000;
+        }
+
+        h1 {
+            font-size: 16pt;
+            color: #000;
+        }
+
+        h2 {
+            font-size: 2.2em;
+            color: #000;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            font-weight: normal;
+            color: #000;
+        }
+        h4 {
+            font-size:16px;
+            font-weight:bold;
+            color:#000000;
+        }
+
+        .pad
+        {
+            padding-left:180px;
+        }
+        p, ol {
+            margin-top: 0;
+            line-height: 180%;
+            text-align:justify;
+            color: #000;
+        }
+         ul {
+            margin-top: 0;
+            line-height: 180%;
+            text-align:justify;
+            font-weight:normal;
+         }
+        ul,ol{
+        }
+        .boldlist
+        {
+            font-weight:bold;
+        }
+         .ol{
+            font-size: 14pt;
+        }
+        .box1 {
+            background:#e5e5e5;
+            border-radius:10px;
+            -moz-border-radius:10px;
+            -webkit-border-radius:10px;
+            behavior:url(js/PIE.htc);
+            position:relative;
+            padding:24px 24px 45px 24px;
+        }
+            .box1 h2 {
+                padding-top:0;
+            }
+
+
+        .grid_11{
+            display:inline;
+            float: left;
+            position: relative;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .extra-list {
+                padding-bottom:18px;
+            }
+            .extra-list li {
+                padding-bottom:6px;
+                width:100%;
+                
+            }
+                .extra-list li a {
+                    position:relative;
+                    display: block;
+                    border:1px solid #fff;
+                    padding:17px 0 17px 60px;
+                    font-size:16px;
+                    background:#F7BE81; /* Fallback color */
+                    height:1.5%;
+                    border-radius:10px;
+                    -moz-border-radius:10px;
+                    -webkit-border-radius:190px;
+                    behavior:url(js/PIE.htc);
+                }
+                .extra-list li a:hover {background:#7EAD01;}
+                    .extra-list li a img {
+                        display:block;
+                        position:absolute;
+                        left:24px;
+                        top:14px;
+                    }
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: #000000;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #00D;
+        }
+
+        #wrapper {
+            width: 980px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Header */
+
+        #header {
+            clear: both;
+            width: 1110px;
+            height: 181px;
+            margin: 0 auto;
+            padding: 0px;
+            background: url(images/bgnew.png) no-repeat left top;
+            font-weight: normal;
+        }
+
+        /* Logo */
+
+        #logo {
+            position:absolute;
+            overflow:visible; /* Changed to visible to show content */
+            margin: 0;
+            
+        }
+
+        #logo h1, #logo p {
+            margin: 0;
+            
+        }
+
+        #logo h1 {
+            padding-top: 105px;
+            padding-left:300px;
+            color: #000;
+            position:absolute;
+            font: bold normal 21pt "Arial Black", Gadget, sans-serif;
+            width: 715px;
+
+        }
+
+        #logo p {
+            margin: 0;
+            padding: 0px 0 0 0px;
+            font: normal 14px Georgia, "Times New Roman", Times, serif;
+            font-style: italic;
+            color: #900;
+        } 
+
+        #logo a {
+            border: none;
+            background: none;
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* Menu */
+
+        #menu {
+            width: 1130px;
+            height: 78px;
+            margin: 0 auto;
+            padding: 0;
+            color: #000;
+        }
+
+        #menu ul {
+            margin: 0;
+            padding: 0px;
+            list-style: none;
+            line-height: normal;
+        }
+
+        #menu li {
+            float: left;
+            background: #FFFFFF url(images/img03.gif) repeat-x left top;
+        }
+
+        #menu a {
+            display: block;
+            height: 38px;
+            margin-right: 3px;
+            padding: 17px 17px 0px 17px;
+            background: url(images/img04.gif) no-repeat right top;
+            text-align: center;
+            text-transform: uppercase;
+            color: #000;
+            border: none;
+            font: bold normal 11.5px "Arial Black";
+        }
+
+        #menu a:hover, #menu .current_page_item a {
+            background: url(images/img05.gif) repeat-x left top;
+            text-decoration: none;
+            color: #00D;
+        }
+
+        /* Page */
+
+        #page {
+            width: 940px;
+            margin: 0 auto;
+            padding: 0px 0px 0px 0px;
+        }
+
+        #page-bgtop {
+            padding: 20px 0px;
+        }
+
+        #page-bgbtm {
+            cursor: auto;
+        }
+
+        /* Content */
+
+        #content {
+            float: right;
+            width: 580px;
+            padding: 20px 0px 0px 0px; /* Adjusted padding */
+            font-family: Georgia, "Times New Roman", Times, serif;
+            font-weight: normal;
+        }
+
+
+        .links {
+            padding-top: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Sidebar */
+
+        #sidebar {
+            float: left;
+            width: 250px;
+            margin: 0px;
+            padding: 0px 0px 0px 0px;
+            color: #000;
+        }
+
+
+        #sidebar ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 14px;
+        }
+
+        #sidebar li {
+            margin: 0;
+            padding: 0;
+        }
+
+        #sidebar li ul {
+            margin: 0px 0px;
+            padding-bottom: 30px;
+        }
+
+        #sidebar h2 {
+            height: 38px;
+            padding-left: 30px;
+            background: url(images/img11.PNG) no-repeat left top;
+            letter-spacing: -.5px;
+            font-size: 1.6em;
+        }
+
+        /* Footer */
+
+        #footer {
+            height: 50px;
+            margin: 0 auto;
+            padding: 0px 0 15px 0;
+            background: #ECECEC;
+            border-top: 1px solid #DEDEDE;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #00D;
+        }
+
+        #footer p {
+            margin: 0;
+            padding-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #000;
+            font: 10px/normal "Times New Roman", Times, serif;
+        }
+        .thimage {
+            padding: 0px;
+            padding-left:0px;
+            padding-top:0px;
+            top: 2px;
+            position: absolute;
+            page-break-before: always;
+            left: 262px;
+            width: 550px;
+            height: 90px;
+        }
+        .post {
+            font: 12px Georgia, "Times New Roman", Times, serif;     
+        }
+        
+        /* --- End of DEI CSS --- */
+
+        /* --- Styles for Simulation Components (from original file) --- */
+        .chart-container {
+            position: relative;
+            height: 450px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .controls-container {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+            background: #f0f2f5; /* Light grey background for controls */
+            border-radius: 8px;
+        }
+        .slider {
+            width: 80%; /* Adjusted width for the container */
+            cursor: pointer;
+        }
+        #torqueValue {
+            font-weight: bold;
+            color: #d9534f;
+        }
+        .param-table {
+            width: 100%; /* Full width within container */
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        .param-table th, .param-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif; /* Match body font */
+        }
+        .param-table th {
+            background-color: #e9ecef;
+        }
+        .explanation {
+            background-color: #e9f5ff;
+            border-left: 5px solid #0056b3;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+        /* Override default title to be left-aligned for content area */
+        #content .title {
+            text-align: left;
+            text-decoration: none;
+            border-bottom: 2px solid #e0e0e0;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <div id="header">
+        <div id="logo">
+            <br> 
+            <div class="thimage"> 
+                <img src="REIbuilding.png" alt="Building" width="165" height="90" />
+                <img src="../Dreamweaver/main.bmp" alt="Logo" width="165" height="90" />
+                <img src="../Dreamweaver/images69.jpg" alt="Lab" width="220" height="90" />
+                <br> 
+            </div>
+        </div>
+    </div>
+    <div id="menu">
+        <ul>
+            <li><div align="left"><a href="../Dreamweaver/index.html"><img src="../Dreamweaver/images/index/home.jpg" height="110" width="90" alt="home"></a></div></li>
+            <li class="current_page_item"><div align="center"><a href="../Dreamweaver/list.html"><img src="../Dreamweaver/images/index/experiment.jpg" height="110" width="105" alt="experiments"></a></div></li>
+            <li><div align="center"><a href="../Dreamweaver/equip.html"><img src="../Dreamweaver/images/index/equipments.jpg" height="110" width="105" alt="basic equipments"></a></div></li>
+            <li><div align="center"><a href="../Dreamweaver/measurement.html"><img src="../Dreamweaver/images/index/measurement.jpg" height="110" width="105" alt="measurement"></a></div></li>
+            <li><div align="center"><a href="../Dreamweaver/char.html"><img src="../Dreamweaver/images/index/characteristics.jpg" height="110" width="105" alt="characteristics"></a></div></li>
+            <li><div align="center"><a href="../Dreamweaver/safety.html"><img src="../Dreamweaver/images/index/safety.jpg" height="110" width="105" alt="lab safety"></a></div></li>
+            <li><div align="center"><a href="../Dreamweaver/feedback.html"><img src="../Dreamweaver/images/index/feedback1.jpg" height="110" width="105" alt="feedback"></a></div></li>
+            <li><div align="center"><a href="../Dreamweaver/lab.html"><img src="../Dreamweaver/images/index/powerlab.jpg" height="110" width="105" alt="DEI powerlab"></a></div></li>
+        </ul>
+    </div>
+    <br><br>
+    <div id="page">
+        <div id="page-bgtop">
+            <div id="page-bgbtm">
+                <div id="content">
+                    <div class="post">
+                        <h2 class="title">Speed Control of a DC Shunt Motor by Armature Resistance</h2>
+                       <H1 align=center><font color="#CC0000">DC MOTOR SIMULATION</font></H1>
+<HR noshade>
+<br>
+<p><strong><u>CONNECTION DIAGRAM</u></strong></p>
+<p><center><img src="Fig.1.1.bmp" >
+    <br>
+    <br>
+<p><strong>Fig 1.1:Connection diagram for synchronizing the alternator with 3-lamp method</strong><br><br>
+                       
+                        <div class="sim-container">
+                            <p>This simulation shows how adding an external resistor ($R_{a_{ext}}$) in series with the armature affects the performance of a DC Shunt Motor. Adjust the load torque slider to see how the characteristics change under different load conditions.</p>
+                            <div class="chart-container">
+                                <canvas id="motorChart"></canvas>
+                            </div>
+                            <div class="controls-container">
+                                <label for="torqueSlider">Adjust Load Torque ($T_L$):</label>
+                                <input type="range" min="1" max="25" value="15" step="0.5" class="slider" id="torqueSlider">
+                                <p>Load Torque: <span id="torqueValue">15.0</span> N·m</p>
+                        
+                                <table class="param-table">
+                                    <caption>Motor Parameters</caption>
+                                    <thead>
+                                        <tr>
+                                            <th>Parameter</th>
+                                            <th>Symbol</th>
+                                            <th>Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Terminal Voltage</td>
+                                            <td>$V_t$</td>
+                                            <td>240 V</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Internal Armature Resistance</td>
+                                            <td>$R_{a_{int}}$</td>
+                                            <td>0.5 &Omega;</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Field Resistance</td>
+                                            <td>$R_f$</td>
+                                            <td>120 &Omega;</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="explanation">
+                                <h3>Underlying Principles</h3><br><br>
+                                The behavior of the DC shunt motor is governed by the following equations:
+                                <ol>
+                                    <li><strong>Field Current ($I_f$):</strong> The field winding is parallel to the supply, so its current is constant:
+                                        $$I_f = \frac{V_t}{R_f}$$
+                                    </li>
+                                    <li><strong>Armature Current ($I_a$):</strong> The motor develops an electromagnetic torque ($T_d$) to match the load torque ($T_L$). Since $T_d = K \cdot I_a$, the armature current is determined by the load:
+                                        $$I_a = \frac{T_L}{K}$$
+                                        where $K$ is the motor constant.
+                                    </li>
+                                    <li><strong>Back EMF ($E_b$) and Speed ($\omega$):</strong> Applying KVL to the armature circuit gives:
+                                        $$V_t = E_b + I_a \cdot (R_{a_{int}} + R_{a_{ext}})$$
+                                        Since Back EMF is proportional to speed ($E_b = K \cdot \omega$), we can solve for speed:
+                                        $$\omega = \frac{V_t - I_a \cdot (R_{a_{int}} + R_{a_{ext}})}{K}$$
+                                        This shows that for a constant load ($I_a$), angular speed ($\omega$) decreases as external resistance ($R_{a_{ext}}$) increases.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="sidebar">
+                    <ul class="extra-list">
+                         <li><a href="../Dreamweaver/objective1.html">Objective</a></li>
+                         <li><a href="../Dreamweaver/equip1.html">Equipments</a></li>
+                         <li><a href="../Dreamweaver/theory1.html">Theory</a></li>
+                         <li><a href="../Dreamweaver/connection1.html">Connection Diagram</a></li>
+                         <li><a href="../Dreamweaver/proce1.html">Procedure</a></li>
+                         <li><a href="../Dreamweaver/observ1.html"> Observation </a></li>
+                         <li><a href="../Dreamweaver/sim1.html">Simulation</a></li>
+                         <li><a href="../Dreamweaver/video 1.html">Videos of Exp.1</a></li>
+                         <li><a href="../Dreamweaver/quiz1.html">Quiz</a></li>
+                         <br>
+                    </ul>
+                </div>
+                <div style="clear: both;">&nbsp;</div>
+            </div>
+        </div>
+    </div>
+    </div>
+<script>
+    // --- 1. GET HTML ELEMENTS ---
+    const ctx = document.getElementById('motorChart').getContext('2d');
+    const torqueSlider = document.getElementById('torqueSlider');
+    const torqueValueLabel = document.getElementById('torqueValue');
+    // --- 2. DC MOTOR PARAMETERS (CONSTANTS) ---
+    const V_T = 240;      // Terminal Voltage (V)
+    const R_A_INT = 0.5;  // Internal Armature Resistance (ohm)
+    const R_F = 120;      // Field Resistance (ohm)
+    const K_M = 1.485;    // Motor constant K (V/(rad/s) or N·m/A)
+    const RA_EXT_MAX = 20; // Max external resistance on x-axis (ohm)
+    const RA_EXT_STEP = 0.5; // Step for calculation points
+    // --- 3. CHART.JS INITIALIZATION ---
+    let motorChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [], 
+            datasets: [
+                {
+                    label: 'Motor Speed (RPM)',
+                    borderColor: 'rgb(54, 162, 235)',
+                    yAxisID: 'y_speed',
+                    data: [],
+                    tension: 0.1
+                },
+                {
+                    label: 'Armature Current (A)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    yAxisID: 'y_current',
+                    data: [],
+                },
+                {
+                    label: 'Field Current (A)',
+                    borderColor: 'rgb(75, 192, 192)',
+                    yAxisID: 'y_current',
+                    data: [],
+                    borderDash: [5, 5], 
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: { mode: 'index', intersect: false },
+            scales: {
+                x: {
+                    display: true,
+                    title: { display: true, text: 'External Armature Resistance (R_a_ext) [Ω]', font: { size: 14 } }
+                },
+                y_speed: { 
+                    type: 'linear', display: true, position: 'left',
+                    title: { display: true, text: 'Speed (RPM)', font: { size: 14, weight: 'bold' }, color: 'rgb(54, 162, 235)' }
+                },
+                y_current: {
+                    type: 'linear', display: true, position: 'right',
+                    title: { display: true, text: 'Current (A)', font: { size: 14, weight: 'bold' }, color: 'rgb(255, 99, 132)' },
+                    grid: { drawOnChartArea: false },
+                }
+            },
+            plugins: {
+                title: { display: true, text: 'Motor Characteristics vs. Armature Resistance', font: { size: 18 }, padding: {bottom: 20}},
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) { label += ': '; }
+                            if (context.parsed.y !== null) { label += context.parsed.y.toFixed(2); }
+                            return label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+    // --- 4. CALCULATION FUNCTION ---
+    function calculateData(loadTorque) {
+        const labels = [];
+        const speedData = [];
+        const armatureCurrentData = [];
+        const fieldCurrentData = [];
+        const If = V_T / R_F;
+        const Ia = loadTorque / K_M;
+        for (let Ra_ext = 0; Ra_ext <= RA_EXT_MAX; Ra_ext += RA_EXT_STEP) {
+            labels.push(Ra_ext.toFixed(1));
+            const R_total = R_A_INT + Ra_ext;
+            const E_b = V_T - (Ia * R_total);
+            let omega = (E_b > 0) ? (E_b / K_M) : 0;
+            const speed_rpm = omega * (60 / (2 * Math.PI));
+            speedData.push(speed_rpm);
+            armatureCurrentData.push(Ia);
+            fieldCurrentData.push(If);
+        }
+        return { labels, speedData, armatureCurrentData, fieldCurrentData };
+    }
+    // --- 5. UPDATE FUNCTION ---
+    function updateChart() {
+        const loadTorque = parseFloat(torqueSlider.value);
+        torqueValueLabel.textContent = loadTorque.toFixed(1);
+        const data = calculateData(loadTorque);
+
+        motorChart.data.labels = data.labels;
+        motorChart.data.datasets[0].data = data.speedData;
+        motorChart.data.datasets[1].data = data.armatureCurrentData;
+        motorChart.data.datasets[2].data = data.fieldCurrentData;
+        motorChart.update();
+    }
+    // --- 6. EVENT LISTENER ---
+    torqueSlider.addEventListener('input', updateChart);
+    // Initial draw of the chart when the page has finished loading
+    window.onload = updateChart;
+</script>
+</body>
+</html>
